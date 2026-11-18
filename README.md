@@ -77,3 +77,9 @@ Designed in alignment with the official Google DevFest 2026 brand identity guide
 - Green: `#34A853`
 - Canvas / Neutral Dark: `#1F1F1F`
 - Warm Base: `#F4F1E9`
+
+---
+
+## 👨‍💻 Maintainer & Lead Engineering
+
+- **Gautam Kumar Maurya** ([@gkm563](https://github.com/gkm563))
