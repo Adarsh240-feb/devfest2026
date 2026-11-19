@@ -1,7 +1,7 @@
 # DevFest Prayagraj 2026
 
 > **Where Ideas Find Their Confluence**  
-> 19 December 2026 • Motilal Nehru National Institute of Technology (MNNIT) Allahabad, Teliarganj, Prayagraj  
+> 19 December 2026 • North Central Zone Cultural Centre (NCZCC), Civil Lines, Prayagraj  
 > Organised by **Google Developer Groups (GDG) Prayagraj**
 
 ---

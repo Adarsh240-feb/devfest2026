@@ -744,7 +744,7 @@
       ctx.font = '500 20px "DM Mono"';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'alphabetic';
-      ctx.fillText('MNNIT · TELIARGANJ, PRAYAGRAJ', 92, 1072);
+      ctx.fillText('NCZCC · CIVIL LINES, PRAYAGRAJ', 92, 1072);
       ctx.textAlign = 'right';
       ctx.fillText('2026', W - 92, 1072);
 
@@ -832,7 +832,7 @@
     });
 
     shareBtn?.addEventListener('click', async () => {
-      const text = `I'm going to DevFest Prayagraj 2026 — 19 December at MNNIT, Prayagraj. Where ideas find their confluence.`;
+      const text = `I'm going to DevFest Prayagraj 2026 — 19 December at NCZCC, Prayagraj. Where ideas find their confluence.`;
       try {
         const blob = await getBlob();
         if (blob && navigator.canShare) {
@@ -1012,7 +1012,7 @@
   if (poster) {
     poster.setAttribute('tabindex', '0');
     poster.setAttribute('role', 'img');
-    poster.setAttribute('aria-label', 'DevFest Prayagraj 2026 poster: 19 December 2026 at MNNIT Teliarganj, Prayagraj');
+    poster.setAttribute('aria-label', 'DevFest Prayagraj 2026 poster: 19 December 2026 at NCZCC Civil Lines, Prayagraj');
   }
 
   // Prevent placeholder links from jumping
