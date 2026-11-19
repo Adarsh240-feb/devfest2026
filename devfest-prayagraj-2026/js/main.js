@@ -314,55 +314,27 @@
   window.setInterval(updateCountdown, 1000);
 
   /* ---------------------------------------------------------
-     Add to calendar (.ics)
+     Add to calendar — Google Calendar + .ics fallback
      --------------------------------------------------------- */
-  const downloadICS = () => {
-    const dtstamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-    const lines = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//GDG Prayagraj//DevFest Prayagraj 2026//EN',
-      'CALSCALE:GREGORIAN',
-      'METHOD:PUBLISH',
-      'BEGIN:VTIMEZONE',
-      'TZID:Asia/Kolkata',
-      'BEGIN:STANDARD',
-      'DTSTART:19700101T000000',
-      'TZOFFSETFROM:+0530',
-      'TZOFFSETTO:+0530',
-      'TZNAME:IST',
-      'END:STANDARD',
-      'END:VTIMEZONE',
-      'BEGIN:VEVENT',
-      'UID:devfest-prayagraj-2026@gdgprayagraj.com',
-      `DTSTAMP:${dtstamp}`,
-      'DTSTART;TZID=Asia/Kolkata:20261219T090000',
-      'DTEND;TZID=Asia/Kolkata:20261219T180000',
-      'SUMMARY:DevFest Prayagraj 2026',
-      'LOCATION:Motilal Nehru National Institute of Technology Allahabad (MNNIT)\\, Teliarganj\\, Prayagraj\\, Uttar Pradesh 211004',
-      'DESCRIPTION:DevFest Prayagraj 2026 by GDG Prayagraj. Talks\\, hands-on labs and community at MNNIT\\, Prayagraj. Registration details at https://gdg.community.dev/gdg-prayagraj/',
-      'URL:https://gdg.community.dev/gdg-prayagraj/',
-      'STATUS:CONFIRMED',
-      'BEGIN:VALARM',
-      'TRIGGER:-P1D',
-      'ACTION:DISPLAY',
-      'DESCRIPTION:DevFest Prayagraj is tomorrow',
-      'END:VALARM',
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ];
-    const blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'devfest-prayagraj-2026.ics';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 2000);
-    toast('Calendar file downloaded. See you at the Sangam.');
+  const GCAL_URL = (() => {
+    const base = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+    const params = new URLSearchParams({
+      text:     'DevFest Prayagraj 2026',
+      dates:    '20261219T030000Z/20261219T123000Z',   // 09:00–18:00 IST = 03:30–12:30 UTC
+      details:  'DevFest Prayagraj 2026 by GDG Prayagraj — talks, workshops, hands-on labs and community. Register at https://gdg.community.dev/gdg-prayagraj/',
+      location: 'North Central Zone Cultural Centre (NCZCC), 14 CSP Singh Marg, Civil Lines, Prayagraj, Uttar Pradesh 211001',
+      sprop:    'website:https://gdg.community.dev/gdg-prayagraj/',
+      trp:      'false',
+    });
+    return `${base}&${params.toString()}`;
+  })();
+
+  const openGoogleCalendar = () => {
+    window.open(GCAL_URL, '_blank', 'noopener,noreferrer');
+    toast('Opening Google Calendar…');
   };
-  $$('.js-calendar').forEach((btn) => btn.addEventListener('click', downloadICS));
+
+  $$('.js-calendar').forEach((btn) => btn.addEventListener('click', openGoogleCalendar));
 
   /* ---------------------------------------------------------
      Programme tabs
@@ -635,15 +607,15 @@
       roundRect(44, 210, 14, 820, 7);
       ctx.fill();
 
-      // Devanagari watermark
+      // Watermark
       ctx.save();
       ctx.translate(838, 520);
       ctx.rotate(-0.16);
-      ctx.font = '400 168px "Tiro Devanagari Hindi"';
-      ctx.fillStyle = 'rgba(30,30,30,.08)';
+      ctx.font = '800 120px "Figtree"';
+      ctx.fillStyle = 'rgba(30,30,30,.06)';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('संगम', 0, 0);
+      ctx.fillText('SANGAM', 0, 0);
       ctx.restore();
 
       // header
