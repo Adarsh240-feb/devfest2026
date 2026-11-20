@@ -320,7 +320,7 @@
     const base = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
     const params = new URLSearchParams({
       text:     'DevFest Prayagraj 2026',
-      dates:    '20261219T030000Z/20261219T123000Z',   // 09:00–18:00 IST = 03:30–12:30 UTC
+      dates:    '20261219T033000Z/20261219T123000Z',   // 09:00–18:00 IST = 03:30–12:30 UTC
       details:  'DevFest Prayagraj 2026 by GDG Prayagraj — talks, workshops, hands-on labs and community. Register at https://gdg.community.dev/gdg-prayagraj/',
       location: 'North Central Zone Cultural Centre (NCZCC), 14 CSP Singh Marg, Civil Lines, Prayagraj, Uttar Pradesh 211001',
       sprop:    'website:https://gdg.community.dev/gdg-prayagraj/',
