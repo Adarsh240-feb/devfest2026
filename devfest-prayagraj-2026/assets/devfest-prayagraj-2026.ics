@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GDG Prayagraj//DevFest 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:DevFest Prayagraj 2026
+X-WR-TIMEZONE:Asia/Kolkata
+BEGIN:VEVENT
+UID:devfest-prayagraj-2026@gdgprayagraj.com
+DTSTAMP:20261121T110000Z
+DTSTART:20261219T033000Z
+DTEND:20261219T123000Z
+SUMMARY:DevFest Prayagraj 2026
+DESCRIPTION:DevFest Prayagraj 2026 by GDG Prayagraj — Where Ideas Find Their Confluence.\nTalks, hands-on workshops, technical sessions, and community networking.\n\nWebsite: https://devfest-prayagraj-2026.vercel.app/\nRegistration: https://gdg.community.dev/gdg-prayagraj/
+LOCATION:North Central Zone Cultural Centre (NCZCC), 14 CSP Singh Marg, Civil Lines, Prayagraj, Uttar Pradesh 211001
+URL:https://devfest-prayagraj-2026.vercel.app/
+STATUS:CONFIRMED
+CATEGORIES:CONFERENCE,TECHNOLOGY,COMMUNITY
+BEGIN:VALARM
+TRIGGER:-PT24H
+ACTION:DISPLAY
+DESCRIPTION:DevFest Prayagraj 2026 starts tomorrow!
+END:VALARM
+END:VEVENT
+END:VCALENDAR
