@@ -1134,4 +1134,78 @@
 
   initFooterSpotlight();
 
+  /* ---------------------------------------------------------
+     Accessible Tabs Controller (Keyboard navigation & ARIA)
+     --------------------------------------------------------- */
+  const initAccessibleTabs = () => {
+    $$('.tabs').forEach((tabList) => {
+      tabList.setAttribute('role', 'tablist');
+      const tabs = $$('.tab', tabList);
+      tabs.forEach((tab, index) => {
+        tab.setAttribute('role', 'tab');
+        const isActive = tab.classList.contains('is-active');
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        tab.setAttribute('tabindex', isActive ? '0' : '-1');
+
+        tab.addEventListener('click', () => {
+          tabs.forEach((t) => {
+            const active = t === tab;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+            t.setAttribute('tabindex', active ? '0' : '-1');
+          });
+
+          // Filter team roster
+          const teamContainer = $('#teamContainer');
+          if (teamContainer) {
+            const filter = tab.getAttribute('data-filter') || 'all';
+            $$('.person', teamContainer).forEach((card) => {
+              if (filter === 'all' || card.getAttribute('data-dept') === filter) {
+                card.removeAttribute('data-hidden');
+              } else {
+                card.setAttribute('data-hidden', 'true');
+              }
+            });
+          }
+
+          // Filter agenda schedule
+          const scheduleGrid = $('.schedule-grid, .programme-grid');
+          if (scheduleGrid) {
+            const filter = tab.getAttribute('data-track') || 'all';
+            $$('.session-row, .programme-row, .schedule-card', scheduleGrid).forEach((row) => {
+              if (filter === 'all' || row.getAttribute('data-track') === filter) {
+                row.style.display = '';
+              } else {
+                row.style.display = 'none';
+              }
+            });
+          }
+        });
+
+        // Arrow navigation
+        tab.addEventListener('keydown', (e) => {
+          let nextIndex = null;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            nextIndex = (index + 1) % tabs.length;
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            nextIndex = (index - 1 + tabs.length) % tabs.length;
+          } else if (e.key === 'Home') {
+            nextIndex = 0;
+          } else if (e.key === 'End') {
+            nextIndex = tabs.length - 1;
+          }
+
+          if (nextIndex !== null) {
+            e.preventDefault();
+            tabs[nextIndex].focus();
+            tabs[nextIndex].click();
+          }
+        });
+      });
+    });
+  };
+
+  initAccessibleTabs();
+
+
 })();
