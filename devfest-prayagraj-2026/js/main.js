@@ -1263,6 +1263,7 @@
      Footer Hero Spotlight & Photo Reveal
      --------------------------------------------------------- */
   const initFooterSpotlight = () => {
+    document.querySelectorAll('.footer-hero-reveal__hint').forEach((el) => el.remove());
     const stage = document.querySelector('.footer-hero-reveal__stage');
     const mask = document.getElementById('footerMask');
     const maskText = document.getElementById('footerMaskText');
