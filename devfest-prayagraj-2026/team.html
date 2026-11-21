@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Crew — DevFest Prayagraj 2026</title>
+<meta name="description" content="Meet the passionate organizers, developers, designers, and managers behind DevFest Prayagraj 2026.">
+<meta name="theme-color" content="#F4F1E9">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/tiro-dev.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .person__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    border: 3px solid var(--paper);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .person:hover .person__img {
+    transform: scale(1.08) rotate(-3deg);
+  }
+  .team-page-hero {
+    padding: 130px 0 40px;
+    background: radial-gradient(circle at 50% 0%, rgba(66, 133, 244, 0.08), transparent 70%);
+    text-align: center;
+  }
+  .team-page-hero .section-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin: 12px 0 16px;
+  }
+  .team-filters-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 10px;
+  }
+  .team-count-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #E8F0FE;
+    color: #1967D2;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .person[data-hidden="true"] {
+    display: none !important;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--ink);
+    transition: transform 0.2s;
+  }
+  .back-btn:hover {
+    transform: translateX(-4px);
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+
+
+<!-- ================= FIXED SITE HEADER ================= -->
+<svg class="svg-sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5m6-7-7 7 7 7"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m-6-7 7 7-7 7"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 7q2.5-3 5 0t5 0 5 0 5 0M2 12q2.5-3 5 0t5 0 5 0 5 0M2 17q2.5-3 5 0t5 0 5 0 5 0"/></symbol>
+  <symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 4c2.6 3.2 2.6 8.4 0 12-2.6-3.6-2.6-8.8 0-12Z"/><path d="M12 16c-4.2 0-7.6-2.6-8.6-7 3.2.2 5.6 1.6 6.9 4M12 16c4.2 0 7.6-2.6 8.6-7-3.2.2-5.6 1.6-6.9 4M5 20h14"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></symbol>
+  <symbol id="av-base" viewBox="0 0 100 100">
+    <path d="M12 102c0-20 15-31 38-31s38 11 38 31Z" style="fill:var(--av-shirt,#4285F4)" stroke="#1E1E1E" stroke-width="2.5"/>
+    <path d="M41 60h18v13a9 9 0 0 1-18 0Z" fill="#E8B88A" stroke="#1E1E1E" stroke-width="2.5"/>
+    <path d="M40 73 50 90l10-17" fill="none" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="44.5" y="88" width="11" height="9" rx="2" fill="#FFFDF6" stroke="#1E1E1E" stroke-width="2"/>
+    <circle cx="30.5" cy="46" r="4.5" fill="#E8B88A" stroke="#1E1E1E" stroke-width="2.5"/>
+    <circle cx="69.5" cy="46" r="4.5" fill="#E8B88A" stroke="#1E1E1E" stroke-width="2.5"/>
+    <ellipse cx="50" cy="44" rx="19.5" ry="22" fill="#E8B88A" stroke="#1E1E1E" stroke-width="2.5"/>
+    <ellipse cx="42.5" cy="45" rx="2.2" ry="2.8" fill="#1E1E1E"/>
+    <ellipse cx="57.5" cy="45" rx="2.2" ry="2.8" fill="#1E1E1E"/>
+    <path d="M43 54.5c4 4 10 4 14 0" fill="none" stroke="#1E1E1E" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="av-h1" viewBox="0 0 100 100"><path d="M30 41c-3-17 7-25 21-25s23 8 19 25c-2-8-7-12-15-13-8 3-18 4-25 13Z" fill="#1E1E1E"/></symbol>
+  <symbol id="av-h2" viewBox="0 0 100 100"><path d="M30 42c-5-6-4-15 2-18 1-7 9-10 14-7 5-4 13-2 15 3 7 1 11 9 7 15 2 3 2 5 2 7-3-6-7-9-11-10-6 3-13 3-19 0-4 1-8 4-10 10Z" fill="#1E1E1E"/></symbol>
+  <symbol id="av-h3" viewBox="0 0 100 100"><path d="M30 41c-2-16 7-24 20-24s22 8 20 24c-4-7-9-11-14-12-9 1-19 3-26 12Z" fill="#1E1E1E"/><g fill="none" stroke="#1E1E1E" stroke-width="2.4"><circle cx="42" cy="45.5" r="6.5"/><circle cx="58" cy="45.5" r="6.5"/><path d="M48.5 45.5h3M35.5 45l-5-1.5M64.5 45l5-1.5"/></g></symbol>
+  <symbol id="av-h4" viewBox="0 0 100 100"><path d="M29 38c0-15 9-23 21-23s21 8 21 23Z" style="fill:var(--av-shirt,#4285F4)" stroke="#1E1E1E" stroke-width="2.5" stroke-linejoin="round"/><path d="M27 38h46" stroke="#1E1E1E" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="13.5" r="3.5" fill="#1E1E1E"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4.2M8.6 13.4l6.8 4.2"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  <symbol id="i-boat" viewBox="0 0 24 24"><path d="M3 16h18l-3 4H6l-3-4Z"/><path d="M6 16V9h9l3 7M9 9V5h3v4"/></symbol>
+  <symbol id="i-diya" viewBox="0 0 24 24"><path d="M4 13h16c0 4-3.6 7-8 7s-8-3-8-7Z"/><path d="M12 13c-2.8-1.6-3.2-4.6-1-6 .4 1.6 1.7 2.3 2.6 3.2.9.9.7 2.2-1.6 2.8Z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10v6M7.5 7.6v.1M11.5 16v-6m0 2.4c.6-1.5 1.6-2.4 3-2.4 1.8 0 2.8 1.2 2.8 3.3V16"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="4"/><path d="m10 9 5 3-5 3V9Z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></symbol>
+  <symbol id="i-android" viewBox="0 0 24 24"><path d="M7 3.5l1.6 2.4M17 3.5l-1.6 2.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M5 11.5c0-3.87 3.13-7 7-7s7 3.13 7 7H5z" fill="currentColor"/><circle cx="8.5" cy="8.5" r="1.1" fill="#fff"/><circle cx="15.5" cy="8.5" r="1.1" fill="#fff"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="M4 17l6-5-6-5M12 19h8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gdg-chevrons" viewBox="0 0 28 20"><path d="M8 3L2 10l6 7" stroke="#EA4335" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 3l6 7-6 7" stroke="#4285F4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap container">
+    <a class="brand" href="index.html" aria-label="DevFest Prayagraj 2026 — home">
+      <img src="assets/brand/devfest-2026-no-date.png" alt="DevFest" width="1600" height="238">
+      <span class="brand__loc">Prayagraj <span>’26</span></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="team.html" class="is-current">The Crew</a>
+      <a href="badge.html">Badge Studio</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn--small magnetic" href="index.html#register">
+        <span>Register</span>
+        <svg class="ic"><use href="#i-arrow"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU OVERLAY ================= -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu__head container">
+    <span class="mono">DevFest Prayagraj ’26</span>
+    <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+  <nav class="mobile-menu__nav container" aria-label="Mobile">
+    <a href="index.html"><span>01</span>Home</a>
+    <a href="agenda.html"><span>02</span>Agenda &amp; Speakers</a>
+    <a href="team.html"><span>03</span>The Crew</a>
+    <a href="badge.html"><span>04</span>Badge Studio</a>
+    <a href="index.html#partners"><span>05</span>Partners</a>
+    <a href="index.html#faq"><span>06</span>FAQ</a>
+  </nav>
+  <div class="mobile-menu__foot container">
+    <a class="btn" href="index.html#register"><span>Register interest</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+    <div class="mobile-menu__meta">
+      <span>19.12.26</span><span>NCZCC · Civil Lines</span><span>Prayagraj</span>
+    </div>
+  </div>
+  <div class="mobile-menu__river" aria-hidden="true"></div>
+</div>
+
+<main id="main">
+  <section class="team-page-hero">
+    <div class="container">
+      <a class="back-btn" href="index.html#team"><svg class="ic" style="transform: rotate(180deg);"><use href="#i-arrow"/></svg> Back to Home</a>
+      <div><span class="team-count-badge mono">GDG PRAYAGRAJ · DEVFEST 2026 CREW</span></div>
+      <h1 class="section-title">The People Behind<br>the <em>Current.</em></h1>
+      <p class="section-intro" style="max-width: 680px; margin: 0 auto;">
+        Meet the organizers, tech architects, designers, managers, and coordinators volunteer-powering Northern India's signature developer festival in the Sangam city.
+      </p>
+
+      <div class="team-filters-wrap">
+        <div class="tabs" role="tablist" aria-label="Filter team by department">
+          <button class="tab is-active" data-filter="all">All (46)</button>
+          <button class="tab" data-filter="tech-team">Tech Team</button>
+          <button class="tab" data-filter="design-and-media">Design &amp; Media</button>
+          <button class="tab" data-filter="logistics-and-management">Logistics &amp; Management</button>
+          <button class="tab" data-filter="social-media-and-pr">Social Media &amp; PR</button>
+          <button class="tab" data-filter="hosting">Hosting</button>
+          <button class="tab" data-filter="photography">Photography</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section team" style="padding-top: 10px;">
+    <div class="container">
+      <div class="team-grid" id="teamContainer">
+        <article class="person person--blue tilt" data-dept="leadership" data-hi="Welcome!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/ankit_kumar_verma.jpeg" alt="Ankit Kumar Verma" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Ankit Kumar Verma</h3>
+          <p class="person__role">Organizer</p>
+          <span class="person__tag">Leadership</span>
+        </article>
+        <article class="person person--green tilt" data-dept="leadership" data-hi="Hello!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/hridyesh_gupta.png" alt="Hridyesh Gupta" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Hridyesh Gupta</h3>
+          <p class="person__role">Co-organizer</p>
+          <span class="person__tag">Leadership</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="tech-team" data-hi="Code & Build!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/gautam_kumar_maurya.jpg" alt="Gautam Kumar Maurya" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Gautam Kumar Maurya</h3>
+          <p class="person__role">Tech Team</p>
+          <span class="person__tag">Tech Team</span>
+        </article>
+        <article class="person person--red tilt" data-dept="tech-team" data-hi="Open Source!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/adarsh_kesharwani.jpeg" alt="Adarsh Kesharwani" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Adarsh Kesharwani</h3>
+          <p class="person__role">Tech Team</p>
+          <span class="person__tag">Tech Team</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="tech-team" data-hi="Deploy!" data-reveal style="--d:200ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/aditya_kumar.jpg" alt="Aditya Kumar" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Aditya Kumar</h3>
+          <p class="person__role">Tech Lead</p>
+          <span class="person__tag">Tech Team</span>
+        </article>
+        <article class="person person--green tilt" data-dept="design-and-media" data-hi="Crafting UI!" data-reveal style="--d:250ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/agamya_samuel.png" alt="Agamya Samuel" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Agamya Samuel</h3>
+          <p class="person__role">Web & Design</p>
+          <span class="person__tag">Design & Media</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="tech-team" data-hi="Building!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/aryan_dubey.jpeg" alt="Aryan Dubey" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Aryan Dubey</h3>
+          <p class="person__role">Tech Team</p>
+          <span class="person__tag">Tech Team</span>
+        </article>
+        <article class="person person--red tilt" data-dept="tech-team" data-hi="Scalability!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h4"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Harsh Srivastava</h3>
+          <p class="person__role">Tech Team</p>
+          <span class="person__tag">Tech Team</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="tech-team" data-hi="Full Stack!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/kavaljeet_singh.png" alt="Kavaljeet Singh" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Kavaljeet Singh</h3>
+          <p class="person__role">Tech Team</p>
+          <span class="person__tag">Tech Team</span>
+        </article>
+        <article class="person person--green tilt" data-dept="tech-team" data-hi="Dev World!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/vaishnavi_mishra.jpg" alt="Vaishnavi Mishra" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Vaishnavi Mishra</h3>
+          <p class="person__role">Tech Team</p>
+          <span class="person__tag">Tech Team</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="design-and-media" data-hi="Motion & Art!" data-reveal style="--d:200ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/harsh_kushwaha.jpg" alt="Harsh Kushwaha" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Harsh Kushwaha</h3>
+          <p class="person__role">Design & Media Lead</p>
+          <span class="person__tag">Design & Media</span>
+        </article>
+        <article class="person person--red tilt" data-dept="design-and-media" data-hi="Visuals!" data-reveal style="--d:250ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/syed_sohrab_haider_rizvi.jpg" alt="Syed Sohrab Haider Rizvi" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Syed Sohrab Haider Rizvi</h3>
+          <p class="person__role">Design & Media</p>
+          <span class="person__tag">Design & Media</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="design-and-media" data-hi="Creative!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/afreen_hashmi.jpg" alt="Afreen Hashmi" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Afreen Hashmi</h3>
+          <p class="person__role">Design & Media</p>
+          <span class="person__tag">Design & Media</span>
+        </article>
+        <article class="person person--green tilt" data-dept="design-and-media" data-hi="Design Lab!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h2"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Ayushi Keshari</h3>
+          <p class="person__role">Design & Media</p>
+          <span class="person__tag">Design & Media</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="design-and-media" data-hi="Media Vibes!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h3"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Vanshika Sharma</h3>
+          <p class="person__role">Design & Media</p>
+          <span class="person__tag">Design & Media</span>
+        </article>
+        <article class="person person--red tilt" data-dept="social-media-and-pr" data-hi="Trending!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/amit_yadav.jpg" alt="Amit Yadav" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Amit Yadav</h3>
+          <p class="person__role">Social Media & PR</p>
+          <span class="person__tag">Social Media & PR</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="social-media-and-pr" data-hi="Outreach!" data-reveal style="--d:200ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/anshuman_rai.jpg" alt="Anshuman Rai" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Anshuman Rai</h3>
+          <p class="person__role">Social Media & PR</p>
+          <span class="person__tag">Social Media & PR</span>
+        </article>
+        <article class="person person--green tilt" data-dept="social-media-and-pr" data-hi="Partners!" data-reveal style="--d:250ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/komal_pandey.jpg" alt="Komal Pandey" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Komal Pandey</h3>
+          <p class="person__role">Sponsor & Promotion</p>
+          <span class="person__tag">Social Media & PR</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Operations!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/animesh_pathak.jpg" alt="Animesh Pathak" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Animesh Pathak</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--red tilt" data-dept="logistics-and-management" data-hi="On Ground!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h4"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Atul Singh</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="logistics-and-management" data-hi="Execution!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/mohd_shadab.jpg" alt="Mohd Shadab" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Mohd Shadab</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--green tilt" data-dept="logistics-and-management" data-hi="Coordination!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/priyankar_shukla.jpeg" alt="Priyankar Shukla" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Priyankar Shukla</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Leadership!" data-reveal style="--d:200ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/reeti_singh.png" alt="Reeti Singh" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Reeti Singh</h3>
+          <p class="person__role">Logistics & Leadership</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--red tilt" data-dept="logistics-and-management" data-hi="Impact!" data-reveal style="--d:250ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/sarthak_singh.jpeg" alt="SARTHAK SINGH" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>SARTHAK SINGH</h3>
+          <p class="person__role">Logistics & Operations</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="logistics-and-management" data-hi="Management!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/shweta_mishra.jpeg" alt="Shweta Mishra" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Shweta Mishra</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--green tilt" data-dept="logistics-and-management" data-hi="Logistics!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h2"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Suryansh Tripathi</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Strategy!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/t_ebenezer_rao.jpg" alt="T Ebenezer Rao" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>T Ebenezer Rao</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--red tilt" data-dept="logistics-and-management" data-hi="Operations!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/abhinisht_singh.jpg" alt="Abhinisht Singh" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Abhinisht Singh</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="logistics-and-management" data-hi="Execution!" data-reveal style="--d:200ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h1"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Avi Dubey</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--green tilt" data-dept="logistics-and-management" data-hi="Support!" data-reveal style="--d:250ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h2"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Deepesh Mani Shukla</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Coordination!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h3"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Harshit Bind</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--red tilt" data-dept="logistics-and-management" data-hi="Logistics!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/sakshi_rai.jpg" alt="Sakshi Rai" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Sakshi Rai</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="logistics-and-management" data-hi="Operations!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h1"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Sankalp Bansal</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--green tilt" data-dept="logistics-and-management" data-hi="Management!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h2"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Siddhi Srivastava</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Support!" data-reveal style="--d:200ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/sweety_gupta.jpg" alt="Sweety Gupta" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Sweety Gupta</h3>
+          <p class="person__role">Logistics & Management</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--red tilt" data-dept="logistics-and-management" data-hi="AI/ML!" data-reveal style="--d:250ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/arohi_singh.jpg" alt="Arohi Singh" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Arohi Singh</h3>
+          <p class="person__role">AI/ML & Operations</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="logistics-and-management" data-hi="Coordination!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/pushpak_tiwari.jpg" alt="Pushpak Tiwari" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Pushpak Tiwari</h3>
+          <p class="person__role">AIML & Logistics</p>
+          <span class="person__tag">Logistics & Management</span>
+        </article>
+        <article class="person person--green tilt" data-dept="hosting" data-hi="Stage Host!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/shivaansh_singh.jpeg" alt="Shivaansh Singh" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Shivaansh Singh</h3>
+          <p class="person__role">Hosting & Emcee</p>
+          <span class="person__tag">Hosting</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="hosting" data-hi="Emcee!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/mahin_farooqui.jpg" alt="Mahin Farooqui" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Mahin Farooqui</h3>
+          <p class="person__role">Hosting & Emcee</p>
+          <span class="person__tag">Hosting</span>
+        </article>
+        <article class="person person--red tilt" data-dept="hosting" data-hi="Anchor!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/sakshi_pandey.jpg" alt="Sakshi Pandey" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Sakshi Pandey</h3>
+          <p class="person__role">Hosting & Emcee</p>
+          <span class="person__tag">Hosting</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="hosting" data-hi="Welcome All!" data-reveal style="--d:200ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/shubhangi_shukla.jpg" alt="Shubhangi Shukla" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Shubhangi Shukla</h3>
+          <p class="person__role">Hosting & Emcee</p>
+          <span class="person__tag">Hosting</span>
+        </article>
+        <article class="person person--green tilt" data-dept="hosting" data-hi="Stage Energy!" data-reveal style="--d:250ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h2"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Vedanshi Singh</h3>
+          <p class="person__role">Hosting & Emcee</p>
+          <span class="person__tag">Hosting</span>
+        </article>
+        <article class="person person--yellow tilt" data-dept="photography" data-hi="Lens Focus!" data-reveal style="--d:0ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h3"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Prakhar Rai</h3>
+          <p class="person__role">Photography</p>
+          <span class="person__tag">Photography</span>
+        </article>
+        <article class="person person--red tilt" data-dept="photography" data-hi="Capturing!" data-reveal style="--d:50ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h4"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Shatakshi Yadav</h3>
+          <p class="person__role">Photography</p>
+          <span class="person__tag">Photography</span>
+        </article>
+        <article class="person person--blue tilt" data-dept="photography" data-hi="Frame It!" data-reveal style="--d:100ms">
+          <div class="person__avatar">
+            <svg class="av" viewBox="0 0 100 100" aria-hidden="true"><use href="#av-base"/><use href="#av-h1"/></svg>
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Shivansh Dubey</h3>
+          <p class="person__role">Photography</p>
+          <span class="person__tag">Photography</span>
+        </article>
+        <article class="person person--green tilt" data-dept="photography" data-hi="Memories!" data-reveal style="--d:150ms">
+          <div class="person__avatar">
+            <img class="person__img" src="assets/team/atul_dwivedi.jpg" alt="Atul Dwivedi" width="104" height="104" loading="lazy">
+            <div class="person__ring" aria-hidden="true"></div>
+            <span class="person__check" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></span>
+          </div>
+          <h3>Atul Dwivedi</h3>
+          <p class="person__role">Photography</p>
+          <span class="person__tag">Photography</span>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;">
+        <a class="btn btn--ink magnetic" href="index.html#team">
+          <span>Explore DevFest Experience</span>
+          <svg class="ic"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FIXED FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="assets/brand/devfest-2026-with-date.png" alt="DevFest 2026" width="1800" height="210" loading="lazy">
+        </div>
+        <p class="footer__place">Prayagraj <br><span>Where ideas find their confluence.</span></p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/gdg_prayagraj/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a>
+          <a href="https://www.linkedin.com/company/gdg-prayagraj/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
+          <a href="https://www.youtube.com/@gdgprayagraj" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ic"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="mono">Explore</span>
+          <a href="index.html#about">About</a>
+          <a href="index.html#tracks">Tracks</a>
+          <a href="index.html#programme">Programme</a>
+          <a href="team.html">The Crew</a>
+        </div>
+        <div class="footer__col">
+          <span class="mono">Practical</span>
+          <a href="index.html#venue">Venue</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#badge">Badge studio</a>
+          <a href="index.html#register">Registration</a>
+        </div>
+        <div class="footer__col">
+          <span class="mono">Community</span>
+          <a href="https://gdg.community.dev/gdg-prayagraj/" target="_blank" rel="noopener">GDG Prayagraj</a>
+          <a href="https://developers.google.com/community-guidelines" target="_blank" rel="noopener">Code of conduct</a>
+          <a href="https://www.instagram.com/gdg_prayagraj/" target="_blank" rel="noopener">Volunteer with us</a>
+          <a href="index.html#partners">Partner with us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 DevFest. All rights reserved.</p>
+      <p class="footer__credit">Made with ❤️ by DevFest team &nbsp;·&nbsp; <a href="#main">Back to top</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><svg class="ic"><use href="#i-arrow-left"/></svg></button>
+
+<script src="js/main.js"></script>
+<script>
+  // Simple, ultra-fast tab filtering
+  document.querySelectorAll('.tabs .tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tabs .tab').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('#teamContainer .person').forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-dept') === filter) {
+          card.removeAttribute('data-hidden');
+        } else {
+          card.setAttribute('data-hidden', 'true');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
