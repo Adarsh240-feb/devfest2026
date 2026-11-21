@@ -269,6 +269,54 @@
       </div>
     </div>
 
+        <!-- ================= FOOTER HERO SPOTLIGHT & PHOTO REVEAL ================= -->
+    <div class="footer-hero-reveal" id="footerSpotlight" aria-label="DevFest Prayagraj 2026 interactive reveal">
+      <div class="footer-hero-reveal__hint">
+        <svg class="ic"><use href="#i-lotus"/></svg>
+        <span>Hover over text to reveal Prayagraj moments</span>
+        <span class="footer-hero-reveal__pill">Photo Reveal</span>
+      </div>
+
+      <div class="footer-hero-reveal__stage">
+        <!-- BASE TEXT LAYER (Crisp muted text) -->
+        <div class="footer-hero-reveal__text footer-hero-reveal__text--base">
+          <span class="f-word" data-zone="devfest">DevFest</span>
+          <span class="f-word" data-zone="prayagraj">
+            <span class="f-letter-pop">P</span>rayagraj
+          </span>
+          <span class="f-word" data-zone="year">’26</span>
+        </div>
+
+        <!-- MASK REVEAL LAYER (Image clipped inside text, masked by cursor spotlight) -->
+        <div class="footer-hero-reveal__mask" id="footerMask">
+          <div class="footer-hero-reveal__text footer-hero-reveal__text--img" id="footerMaskText">
+            <span class="f-word">DevFest</span>
+            <span class="f-word">
+              <span class="f-letter-pop">P</span>rayagraj
+            </span>
+            <span class="f-word">’26</span>
+          </div>
+        </div>
+
+        <!-- CURSOR SPOTLIGHT GLOW -->
+        <div class="footer-hero-reveal__glow" id="footerGlow" aria-hidden="true"></div>
+
+        <!-- FLOATING PHOTO PREVIEW CARD -->
+        <div class="footer-hero-reveal__card" id="footerCard" aria-hidden="true">
+          <div class="footer-card__img-wrap">
+            <img id="footerCardImg" src="assets/gallery/sangam_boats.jpg" alt="Prayagraj Moment">
+            <span class="footer-card__badge" id="footerCardTag">Triveni Sangam</span>
+          </div>
+          <p class="footer-card__caption" id="footerCardCaption">Where Three Holy Rivers Meet</p>
+        </div>
+      </div>
+
+      <div class="footer-hero-reveal__meta">
+        <span class="footer-hero-reveal__tag">प्रयागराज • The Digital Sangam</span>
+        <span class="footer-hero-reveal__sub">19 December 2026 · NCZCC Prayagraj</span>
+      </div>
+    </div>
+
     <div class="footer__bottom">
       <p>© 2026 DevFest. All rights reserved.</p>
       <p class="footer__credit">Made with ❤️ by DevFest team &nbsp;·&nbsp; <a href="#main">Back to top</a></p>

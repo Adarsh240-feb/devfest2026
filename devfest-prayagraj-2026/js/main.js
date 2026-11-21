@@ -1018,4 +1018,120 @@
   // Prevent placeholder links from jumping
   $$('a[href="#"]').forEach((a) => a.addEventListener('click', (e) => e.preventDefault()));
 
+
+  /* ---------------------------------------------------------
+     Footer Hero Spotlight & Photo Reveal
+     --------------------------------------------------------- */
+  const initFooterSpotlight = () => {
+    const stage = document.querySelector('.footer-hero-reveal__stage');
+    const mask = document.getElementById('footerMask');
+    const maskText = document.getElementById('footerMaskText');
+    const glow = document.getElementById('footerGlow');
+    const card = document.getElementById('footerCard');
+    const cardImg = document.getElementById('footerCardImg');
+    const cardTag = document.getElementById('footerCardTag');
+    const cardCaption = document.getElementById('footerCardCaption');
+    if (!stage || !mask || !maskText) return;
+
+    const moments = {
+      devfest: {
+        img: 'assets/gallery/devfest2024-auditorium-crowd.jpg',
+        tag: 'Tech Conference',
+        caption: 'DevFest Prayagraj · 500+ Builders & Keynotes'
+      },
+      prayagraj: {
+        img: 'assets/gallery/sangam_boats.jpg',
+        tag: 'Triveni Sangam',
+        caption: 'Holy Confluence · Sangam Ghats & Boats'
+      },
+      year: {
+        img: 'assets/gallery/khusro_bagh.jpg',
+        tag: 'Heritage Monument',
+        caption: 'Khusro Bagh · Historic Architecture of Prayagraj'
+      }
+    };
+
+    let isHovered = false;
+    let mouseX = 0, mouseY = 0;
+    let currentZone = 'prayagraj';
+    let animId = null;
+
+    const setZone = (zoneKey) => {
+      if (!moments[zoneKey] || currentZone === zoneKey) return;
+      currentZone = zoneKey;
+      const data = moments[zoneKey];
+      maskText.style.setProperty('--bg-img', `url('../${data.img}')`);
+      if (cardImg) cardImg.src = data.img;
+      if (cardTag) cardTag.textContent = data.tag;
+      if (cardCaption) cardCaption.textContent = data.caption;
+    };
+
+    // Ambient sweep when not hovered
+    const ambientSweep = () => {
+      if (!isHovered) {
+        const time = Date.now() * 0.0012;
+        const xPercent = 50 + Math.sin(time) * 36;
+        const yPercent = 50 + Math.cos(time * 1.3) * 25;
+        mask.style.setProperty('--spot-x', `${xPercent}%`);
+        mask.style.setProperty('--spot-y', `${yPercent}%`);
+        mask.style.setProperty('--spot-r', '240px');
+      }
+      animId = requestAnimationFrame(ambientSweep);
+    };
+    animId = requestAnimationFrame(ambientSweep);
+
+    stage.addEventListener('mouseenter', () => {
+      isHovered = true;
+      if (glow) glow.style.opacity = '1';
+      if (card) {
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1) translateY(0)';
+      }
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      isHovered = false;
+      if (glow) glow.style.opacity = '0';
+      if (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.9) translateY(10px)';
+      }
+    });
+
+    stage.addEventListener('mousemove', (e) => {
+      const rect = stage.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+
+      mask.style.setProperty('--spot-x', `${mouseX}px`);
+      mask.style.setProperty('--spot-y', `${mouseY}px`);
+      mask.style.setProperty('--spot-r', '280px');
+
+      if (glow) {
+        glow.style.left = `${mouseX}px`;
+        glow.style.top = `${mouseY}px`;
+      }
+
+      // Check which word is hovered or closest
+      const wordUnder = e.target.closest('.f-word[data-zone]');
+      if (wordUnder && wordUnder.dataset.zone) {
+        setZone(wordUnder.dataset.zone);
+      } else {
+        const ratio = mouseX / rect.width;
+        if (ratio < 0.38) setZone('devfest');
+        else if (ratio < 0.78) setZone('prayagraj');
+        else setZone('year');
+      }
+
+      if (card) {
+        const cardX = Math.min(Math.max(mouseX - 115, 10), rect.width - 240);
+        const cardY = Math.max(10, mouseY - 160);
+        card.style.left = `${cardX}px`;
+        card.style.top = `${cardY}px`;
+      }
+    });
+  };
+
+  initFooterSpotlight();
+
 })();
