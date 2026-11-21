@@ -5926,7 +5926,7 @@ body.is-loaded .word>span {
   color: rgba(244, 241, 233, 0.6);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 540px) {
   .footer-hero-reveal__card {
     display: none !important;
   }
