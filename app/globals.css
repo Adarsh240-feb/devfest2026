@@ -7117,3 +7117,89 @@ body.is-loaded .word>span {
   color: var(--ink);
 }
 
+
+/* ---------- Site-wide mandala backdrop (from the DevFest 2026 banner) ---------- */
+.mandala {
+  --mandala-ink: #7A1414;
+  --mandala-jaali: .085;
+  --mandala-lines: .15;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .mandala {
+  --mandala-ink: #E9D8A6;
+  --mandala-jaali: .055;
+  --mandala-lines: .11;
+}
+
+/* Jaali lattice: tiled, strongest at the edges and fading out toward the centre */
+.mandala__jaali {
+  position: absolute;
+  inset: 0;
+  background: var(--mandala-ink);
+  opacity: var(--mandala-jaali);
+  -webkit-mask-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' fill='none' stroke='%23000' stroke-width='1.6'%3E%3Cpath d='M15 15A7.5 7.5 0 1 1 29 15A7.5 7.5 0 1 1 29 29A7.5 7.5 0 1 1 15 29A7.5 7.5 0 1 1 15 15ZM15 15L3.3 3.3M29 15L40.7 3.3M29 29L40.7 40.7M15 29L3.3 40.7'/%3E%3Ccircle r='4.6'/%3E%3Ccircle cx='44' r='4.6'/%3E%3Ccircle cy='44' r='4.6'/%3E%3Ccircle cx='44' cy='44' r='4.6'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 72% 68% at 50% 50%, transparent 48%, #000 92%);
+  -webkit-mask-size: 44px 44px, 100% 100%;
+  -webkit-mask-repeat: repeat, no-repeat;
+  -webkit-mask-composite: source-in;
+  mask-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' fill='none' stroke='%23000' stroke-width='1.6'%3E%3Cpath d='M15 15A7.5 7.5 0 1 1 29 15A7.5 7.5 0 1 1 29 29A7.5 7.5 0 1 1 15 29A7.5 7.5 0 1 1 15 15ZM15 15L3.3 3.3M29 15L40.7 3.3M29 29L40.7 40.7M15 29L3.3 40.7'/%3E%3Ccircle r='4.6'/%3E%3Ccircle cx='44' r='4.6'/%3E%3Ccircle cy='44' r='4.6'/%3E%3Ccircle cx='44' cy='44' r='4.6'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 72% 68% at 50% 50%, transparent 48%, #000 92%);
+  mask-size: 44px 44px, 100% 100%;
+  mask-repeat: repeat, no-repeat;
+  mask-composite: intersect;
+}
+
+.mandala__line {
+  fill: none;
+  stroke: var(--mandala-ink);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.mandala__line--bold {
+  stroke-width: 2.6;
+}
+
+/* Cusped-arch frame corners */
+.mandala__corner {
+  position: absolute;
+  width: clamp(130px, 19vw, 290px);
+  height: auto;
+  aspect-ratio: 1;
+  opacity: var(--mandala-lines);
+}
+
+.mandala__corner--tl { left: 0; top: 0; }
+.mandala__corner--tr { right: 0; top: 0; transform: scaleX(-1); }
+.mandala__corner--bl { left: 0; bottom: 0; transform: scaleY(-1); }
+.mandala__corner--br { right: 0; bottom: 0; transform: scale(-1, -1); }
+
+/* Lotus vines down both sides */
+.mandala__vine {
+  position: absolute;
+  top: 50%;
+  height: min(64vh, 600px);
+  width: auto;
+  aspect-ratio: 220 / 640;
+  opacity: var(--mandala-lines);
+}
+
+.mandala__vine--left { left: clamp(4px, 1vw, 18px); transform: translateY(-50%); }
+.mandala__vine--right { right: clamp(4px, 1vw, 18px); transform: translateY(-50%) scaleX(-1); }
+
+@media (max-width: 900px) {
+  .mandala__vine { display: none; }
+}
+
+@media print {
+  .mandala { display: none; }
+}

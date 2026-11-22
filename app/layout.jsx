@@ -1,5 +1,6 @@
 import './globals.css';
 import SiteScripts from '@/components/SiteScripts';
+import MandalaBackdrop from '@/components/MandalaBackdrop';
 
 const SITE_URL = 'https://devfest-prayagraj-2026.vercel.app';
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
         <link rel="preload" href="/assets/brand/devfest-2026-no-date.png" as="image" />
       </head>
       <body suppressHydrationWarning>
+        <MandalaBackdrop />
         {children}
         <SiteScripts />
       </body>
