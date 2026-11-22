@@ -1277,9 +1277,9 @@ export default function HomePage() {
           <div className="final-cta__sun" aria-hidden="true" />
           <div className="final-cta__waves" aria-hidden="true">
             <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
-              <path d="M0 120C180 60 300 170 480 120s300-80 480-20 300 70 480 10v110H0Z" fill="#57CAFF" opacity=".45" />
-              <path d="M0 150C180 90 300 200 480 150s300-80 480-20 300 70 480 10v80H0Z" fill="#4285F4" opacity=".28" />
-              <path d="M0 180C180 120 300 220 480 180s300-70 480-10 300 60 480 0v50H0Z" fill="#34A853" opacity=".22" />
+              <path d="M0 120C180 60 300 170 480 120s300-80 480-20 300 70 480 10v110H0Z" fill="#F8EACA" opacity=".6" />
+              <path d="M0 150C180 90 300 200 480 150s300-80 480-20 300 70 480 10v80H0Z" fill="#4A6FA8" opacity=".35" />
+              <path d="M0 180C180 120 300 220 480 180s300-70 480-10 300 60 480 0v50H0Z" fill="#1B2A45" opacity=".92" />
             </svg>
           </div>
           <div className="container final-cta__inner">

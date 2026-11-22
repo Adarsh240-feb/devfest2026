@@ -2579,7 +2579,7 @@ body.is-loaded .word>span {
 
 /* ---------- Tracks ---------- */
 .tracks {
-  background: linear-gradient(180deg, var(--blue-soft) 0%, #DDF1F7 55%, var(--paper) 100%);
+  background: linear-gradient(180deg, var(--blue-soft) 0%, var(--blue-wash) 55%, var(--paper) 100%);
   border-top: 1px solid var(--line)
 }
 
@@ -6517,7 +6517,7 @@ body.is-loaded .word>span {
   z-index: 2;
   width: 100%;
   max-width: 520px;
-  background: #181c24;
+  background: #15213A;
   color: #F8EACA;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
@@ -6956,17 +6956,35 @@ body.is-loaded .word>span {
   border-color: var(--red-pop);
 }
 
+[data-theme="dark"] .track-card--blue .track-card__art { background: #CFDAEC; }
+[data-theme="dark"] .track-card--green .track-card__art { background: #D3EBD9; }
+[data-theme="dark"] .track-card--yellow .track-card__art { background: #FBDDBE; }
+[data-theme="dark"] .track-card--red .track-card__art { background: #F0D2CB; }
+
+[data-theme="dark"] .track-card__art {
+  border-bottom: 1px solid rgba(248, 234, 202, 0.2);
+}
+
+[data-theme="dark"] .tracks {
+  background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 100%);
+}
+
 /* Workshop Banner */
 [data-theme="dark"] .workshop-banner {
-  background: linear-gradient(135deg, #1C1E26 0%, #171921 100%);
+  background: linear-gradient(135deg, #1D2C4A 0%, #15213A 100%);
   color: var(--ink);
   border: 1px solid rgba(248, 234, 202, 0.16);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
+/* Navy icon strokes would vanish on the navy banner */
+[data-theme="dark"] .workshop-banner__art [stroke="#1B2A45"] {
+  stroke: var(--ink);
+}
+
 /* Speakers Section & Cards */
 [data-theme="dark"] .speakers {
-  background: #171920;
+  background: #15213A;
   border-top-color: rgba(248, 234, 202, 0.15);
   border-bottom-color: rgba(248, 234, 202, 0.15);
 }
@@ -7029,7 +7047,7 @@ body.is-loaded .word>span {
 }
 
 [data-theme="dark"] .map-frame {
-  background: #181A21;
+  background: #15213A;
   border-color: rgba(248, 234, 202, 0.25);
 }
 
@@ -7042,7 +7060,7 @@ body.is-loaded .word>span {
 }
 
 [data-theme="dark"] .map-svg .mp-road-label {
-  stroke: #181A21;
+  stroke: #15213A;
 }
 
 [data-theme="dark"] .travel-card {
@@ -7072,7 +7090,7 @@ body.is-loaded .word>span {
 }
 
 [data-theme="dark"] .partner-card--cta {
-  background: #1C1E26;
+  background: #1D2C4A;
   color: var(--ink);
   border-color: rgba(248, 234, 202, 0.25);
 }
@@ -7117,18 +7135,18 @@ body.is-loaded .word>span {
 
 /* Footer & Hero Reveal */
 [data-theme="dark"] .footer {
-  background: #0B0C0E;
+  background: #0A1222;
   color: #F8EACA;
   border-top: 1px solid rgba(248, 234, 202, 0.1);
 }
 
 [data-theme="dark"] .footer__logo {
-  background: #1A1C22;
+  background: #1D2C4A;
   border-color: rgba(248, 234, 202, 0.25);
 }
 
 [data-theme="dark"] .footer-hero-reveal__card {
-  background: #1A1C22;
+  background: #1D2C4A;
   border-color: rgba(248, 234, 202, 0.35);
 }
 
@@ -7136,6 +7154,41 @@ body.is-loaded .word>span {
   color: var(--ink);
 }
 
+
+/* Final CTA in dark mode: maroon evening sky (from the banner) instead of the daytime orange */
+[data-theme="dark"] .final-cta {
+  background: radial-gradient(ellipse 80% 90% at 50% 0%, #7A0D0D 0%, #4A0606 55%, #2E0404 100%);
+  border-top-color: rgba(248, 234, 202, 0.18);
+}
+
+[data-theme="dark"] .final-cta__sun {
+  background: radial-gradient(circle, rgba(239, 136, 73, 0.35) 0%, rgba(239, 136, 73, 0.12) 55%, transparent 72%);
+  border-color: rgba(248, 234, 202, 0.14);
+  opacity: 1;
+}
+
+[data-theme="dark"] .final-cta__sun::after {
+  border-color: rgba(248, 234, 202, 0.18);
+}
+
+[data-theme="dark"] .final-cta__eyebrow { color: rgba(248, 234, 202, 0.7); }
+[data-theme="dark"] .final-cta__copy { color: rgba(248, 234, 202, 0.82); }
+
+[data-theme="dark"] .final-cta__socials a {
+  border-color: rgba(248, 234, 202, 0.35);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .final-cta__socials a:hover {
+  background: var(--ink);
+  color: #4A0606;
+  border-color: var(--ink);
+}
+
+/* Waves: saffron and cream ripples settling into the navy footer */
+[data-theme="dark"] .final-cta__waves path:nth-child(1) { fill: #EF8849; opacity: .28; }
+[data-theme="dark"] .final-cta__waves path:nth-child(2) { fill: #F8EACA; opacity: .1; }
+[data-theme="dark"] .final-cta__waves path:nth-child(3) { fill: #0A1222; opacity: .85; }
 
 /* ---------- Site-wide mandala backdrop (from the DevFest 2026 banner) ---------- */
 .mandala {
