@@ -2160,6 +2160,23 @@ body.is-loaded .word>span {
   color: #EF8849;
 }
 
+.ribbon__logo {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: clamp(28px, 2.6vw, 34px);
+  height: clamp(28px, 2.6vw, 34px);
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #FFFDF6;
+  box-shadow: 0 0 0 2px rgba(239, 136, 73, .55);
+}
+
+.ribbon__logo svg {
+  width: 62%;
+  height: 62%;
+}
+
 .ribbon__gdg {
   flex: none;
   width: 26px;
