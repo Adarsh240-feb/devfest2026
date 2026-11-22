@@ -66,7 +66,6 @@ const eventJsonLd = {
 export default function HomePage() {
   return (
     <>
-      <script dangerouslySetInnerHTML={{ __html: "document.body.classList.add('is-preloading')" }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }} />
       <SkipLink />
       <BoatPreloader />

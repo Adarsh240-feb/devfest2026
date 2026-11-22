@@ -441,6 +441,58 @@ em {
 .preloader--river {
   display: block;
   overflow: hidden;
+  background: transparent; /* the curtain below carries the background */
+  cursor: pointer;
+}
+
+/* Already seen this session: no intro */
+.intro-seen .preloader {
+  display: none;
+}
+
+/* Covers the page; wiped away (soft edge) behind the ship via --wipe */
+.preloader__curtain {
+  --wipe: 0px;
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  -webkit-mask-image: linear-gradient(90deg, transparent calc(var(--wipe) - min(160px, 12vw)), #000 var(--wipe));
+  mask-image: linear-gradient(90deg, transparent calc(var(--wipe) - min(160px, 12vw)), #000 var(--wipe));
+}
+
+.preloader__deva {
+  font-family: var(--deva);
+  letter-spacing: .02em;
+  text-transform: none;
+}
+
+.preloader__skip {
+  position: absolute;
+  right: clamp(16px, 3vw, 36px);
+  bottom: clamp(16px, 3vh, 32px);
+  z-index: 2;
+  padding: 10px 18px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+
+.preloader__skip:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.preloader__skip:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
 }
 
 .preloader__inner--river {
@@ -509,16 +561,24 @@ em {
 
 .trail--glow {
   stroke: url(#trailFade);
-  stroke-width: 46;
-  opacity: .55;
+  stroke-width: 54;
+  opacity: .45;
   filter: url(#trailGlow);
 }
 
-.trail--body {
-  stroke: url(#trailFade);
-  stroke-width: 14;
-  opacity: .85;
+/* Ganga, Yamuna and the hidden Saraswati, merging behind the ship */
+.trail--river {
+  stroke-width: 8;
   filter: url(#trailSoft);
+}
+
+.trail--ganga { stroke: url(#trailGanga); }
+.trail--yamuna { stroke: url(#trailYamuna); }
+
+.trail--saraswati {
+  stroke: url(#trailSaraswati);
+  stroke-width: 4;
+  stroke-dasharray: 1 10;
 }
 
 .trail--core {
@@ -532,12 +592,18 @@ em {
   to { stroke-dashoffset: -40; }
 }
 
-[data-theme="dark"] .trail--glow { opacity: .8; }
+[data-theme="dark"] .trail--glow { opacity: .7; }
 
+.boat__haze { fill: #C3ECF6; opacity: .5; }
 .boat__glow { fill: #57CAFF; opacity: .55; }
 .boat__waterline { fill: #E4F5FB; opacity: .9; }
 .boat__bowwave { fill: #C3ECF6; opacity: .95; }
 [data-theme="dark"] .boat__glow { opacity: .75; }
+[data-theme="dark"] .boat__haze { fill: #57CAFF; opacity: .16; }
+
+/* Softer, whiter smoke against the dark background */
+[data-theme="dark"] .ship__smoke { opacity: .6; }
+[data-theme="dark"] .ship__smoke circle { fill: #F4F1E9; stroke: rgba(244, 241, 233, .35); }
 
 .ship__name {
   font-family: var(--deva);
