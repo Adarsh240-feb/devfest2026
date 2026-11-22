@@ -270,11 +270,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className="hero__scroll" aria-hidden="true">
-            <span>Scroll</span>
-            {" "}
-            <span className="hero__scroll-line" />
-          </div>
         </section>
         {/* ================= MARQUEE ================= */}
         <div className="ribbon" aria-label="DevFest themes">
