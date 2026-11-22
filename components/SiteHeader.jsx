@@ -1,3 +1,5 @@
+import { registerLinkProps } from '@/lib/registration';
+
 const NAV = [
   { key: 'home', href: '/', label: 'Home' },
   { key: 'agenda', href: '/agenda', label: 'Agenda' },
@@ -41,8 +43,8 @@ export default function SiteHeader({ current }) {
               </svg>
             </span>
           </button>{' '}
-          <a className="btn btn--small magnetic" href={onHome ? '#register' : '/#register'}>
-            <span>Register</span>{' '}
+          <a className="btn btn--small magnetic" {...registerLinkProps(onHome ? '#register' : '/#register')}>
+            <span>Register now</span>{' '}
             <svg className="ic">
               <use href="#i-arrow" />
             </svg>

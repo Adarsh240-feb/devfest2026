@@ -1,3 +1,4 @@
+import { registerLinkProps } from '@/lib/registration';
 import SkipLink from '@/components/SkipLink';
 import BoatPreloader from '@/components/BoatPreloader';
 import HeroMandala from '@/components/HeroMandala';
@@ -195,8 +196,8 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="hero__actions" data-reveal="" style={{ "--d": "700ms" }}>
-                <a className="btn btn--primary magnetic" href="#register">
-                  <span>Register interest</span>
+                <a className="btn btn--primary magnetic" {...registerLinkProps('#register')}>
+                  <span>Register now</span>
                   {" "}
                   <svg className="ic">
                     <use href="#i-arrow" />
@@ -1291,8 +1292,8 @@ export default function HomePage() {
             </h2>
             <p className="final-cta__copy" data-reveal="" style={{ "--d": "140ms" }}>Registration opens soon. Until then, save the date, tell a friend, and bring the idea you’ve been sitting on.</p>
             <div className="final-cta__actions" data-reveal="" style={{ "--d": "200ms" }}>
-              <a className="btn btn--ink btn--large magnetic" href="https://gdg.community.dev/gdg-prayagraj/" target="_blank" rel="noopener">
-                <span>Follow for registration</span>
+              <a className="btn btn--ink btn--large magnetic" {...registerLinkProps('https://gdg.community.dev/gdg-prayagraj/')}>
+                <span>Register now</span>
                 <svg className="ic">
                   <use href="#i-arrow" />
                 </svg>

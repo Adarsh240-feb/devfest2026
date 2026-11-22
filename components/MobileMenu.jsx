@@ -1,3 +1,5 @@
+import { registerLinkProps } from '@/lib/registration';
+
 const LINKS = [
   { href: '/', label: 'Home' },
   { href: '/agenda', label: 'Agenda & Speakers' },
@@ -34,8 +36,8 @@ export default function MobileMenu() {
         ))}
       </nav>
       <div className="mobile-menu__foot container">
-        <a className="btn" href="/#register">
-          <span>Register interest</span>
+        <a className="btn" {...registerLinkProps()}>
+          <span>Register now</span>
           <svg className="ic">
             <use href="#i-arrow" />
           </svg>
