@@ -26,9 +26,9 @@ export default function NotFound() {
               <span>0</span>
               4
             </div>
-            <h1 className="error-title">You've drifted into uncharted waters.</h1>
+            <h1 className="error-title">You’ve drifted into uncharted waters.</h1>
             <p className="error-desc">
-              The stream you followed doesn't lead anywhere. Don't worry — find your way back to the Sangam with one of the links below.
+              The stream you followed doesn’t lead anywhere. Don’t worry — find your way back to the Sangam with one of the links below.
             </p>
             <div className="error-actions">
               <a className="btn btn--primary magnetic" href="/">

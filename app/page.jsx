@@ -453,7 +453,7 @@ export default function HomePage() {
                 <div className="track-card__body">
                   <h3>{"AI & Agentic Systems"}</h3>
                   <p>
-                    Gemini, the Agent Development Kit and MCP. Build agents that finish the job, and learn how to tell when they don't.
+                    Gemini, the Agent Development Kit and MCP. Build agents that finish the job, and learn how to tell when they don’t.
                   </p>
                   <div className="track-card__tags">
                     <span>Gemini API</span>
@@ -498,7 +498,7 @@ export default function HomePage() {
                 </div>
                 <div className="track-card__body">
                   <h3>{"Android & On-device AI"}</h3>
-                  <p>Compose, Kotlin and Gemini Nano. AI that lives in your pocket and works even when the network doesn't.</p>
+                  <p>Compose, Kotlin and Gemini Nano. AI that lives in your pocket and works even when the network doesn’t.</p>
                   <div className="track-card__tags">
                     <span>Compose</span>
                     <span>Kotlin</span>
@@ -955,7 +955,7 @@ export default function HomePage() {
                   <div className="acc-panel" id="faq4" role="region" aria-labelledby="faqBtn4">
                     <div className="acc-panel__inner">
                       <p>
-                        We can't arrange a stay for attendees, so please book your own if you're coming from outside Prayagraj. December is a busy month in the city, so book early.
+                        We can’t arrange a stay for attendees, so please book your own if you’re coming from outside Prayagraj. December is a busy month in the city, so book early.
                       </p>
                     </div>
                   </div>
@@ -1006,7 +1006,7 @@ export default function HomePage() {
                   <div className="acc-panel" id="faq7" role="region" aria-labelledby="faqBtn7">
                     <div className="acc-panel__inner">
                       <p>
-                        No age limit. If you're curious about tech, you're welcome, whether you're in school, in college or ten years into your career.
+                        No age limit. If you’re curious about tech, you’re welcome, whether you’re in school, in college or ten years into your career.
                       </p>
                     </div>
                   </div>
@@ -1135,7 +1135,7 @@ export default function HomePage() {
             <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", background: "#34A853" }} />
             {" "}Save the Date
           </div>
-          <h3 className="cal-modal__title" id="calModalTitle">Add DevFest Prayagraj '26</h3>
+          <h3 className="cal-modal__title" id="calModalTitle">Add DevFest Prayagraj ’26</h3>
           <div className="cal-modal__event-card">
             <div className="cal-modal__event-row">
               <svg className="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor">

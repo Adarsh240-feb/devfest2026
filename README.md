@@ -39,10 +39,9 @@ The website is a Next.js (App Router) app with focused, statically prerendered p
    - Interactive HTML5 canvas badge generator.
    - Real-time attendee customization: name input, 6 role chips, 4 color current swatches, and high-res PNG download & Web Share API integration.
 
-5. **Interactive Footer Spotlight**
-   - Giant typographic reveal (`DevFest Prayagraj '26`) with dynamic mouse-tracked radial mask.
-   - Background image clipping (`background-clip: text`) revealing authentic Sangam Ghat boats, Khusro Bagh heritage architecture, and conference keynote moments.
-   - Floating interactive preview card providing context on word hover.
+5. **Footer Photo Wall**
+   - Prayagraj polaroids (shared with the home intro via `lib/photos.js`) land one by one as the footer scrolls into view.
+   - Hovering the `DevFest Prayagraj '26` wordmark waves it into Google colours, framed by the GDG `< >` chevrons.
 
 ---
 
@@ -63,10 +62,9 @@ The website is a Next.js (App Router) app with focused, statically prerendered p
 ├── lib/
 │   └── site.js                      # Vanilla JS interactions (preloader, badge canvas, spotlight, tabs)
 ├── public/                          # Served as-is from the site root
-│   ├── assets/                      # brand/, fonts/, gallery/, img/, team/, tracks/
+│   ├── assets/                      # brand/, collage/, fonts/, img/, team/, tracks/
 │   ├── manifest.json, robots.txt, sitemap.xml
 ├── next.config.mjs                  # Redirects for old *.html URLs + security/cache headers
-├── vibe_images/                     # Landmark artwork references
 └── README.md
 ```
 
@@ -92,7 +90,7 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-Production build: `npm run build && npm start`. On Vercel, the framework is auto-detected as Next.js.
+Lint: `npm run lint`. Production build: `npm run build && npm start`. On Vercel, the framework is auto-detected as Next.js.
 
 ---
 

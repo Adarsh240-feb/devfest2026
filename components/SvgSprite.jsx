@@ -8,9 +8,6 @@ export default function SvgSprite() {
       <symbol id="i-arrow-left" viewBox="0 0 24 24">
         <path d="M19 12H5m6-7-7 7 7 7" />
       </symbol>
-      <symbol id="i-arrow-right" viewBox="0 0 24 24">
-        <path d="M5 12h14m-6-7 7 7-7 7" />
-      </symbol>
       <symbol id="i-wave" viewBox="0 0 24 24">
         <path d="M2 7q2.5-3 5 0t5 0 5 0 5 0M2 12q2.5-3 5 0t5 0 5 0 5 0M2 17q2.5-3 5 0t5 0 5 0 5 0" />
       </symbol>
@@ -72,9 +69,6 @@ export default function SvgSprite() {
         <circle cx="6" cy="12" r="3" />
         <circle cx="18" cy="19" r="3" />
         <path d="m8.6 10.6 6.8-4.2M8.6 13.4l6.8 4.2" />
-      </symbol>
-      <symbol id="i-chevron" viewBox="0 0 24 24">
-        <path d="m6 9 6 6 6-6" />
       </symbol>
       <symbol id="i-check" viewBox="0 0 24 24">
         <path d="m4 12 5 5L20 6" />
