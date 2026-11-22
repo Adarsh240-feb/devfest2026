@@ -1235,8 +1235,6 @@ export default function HomePage() {
               {" "}
               <span id="calCopyLabel">Copy event details</span>
             </button>
-            {" "}
-            <span className="cal-modal__badge">RFC 5545 iCal · All Devices</span>
           </div>
         </div>
       </div>
