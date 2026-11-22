@@ -545,6 +545,166 @@ em {
   transform: translate(-200vw, 0); /* hidden until lib/site.js places it */
 }
 
+/* ---------- Intro photo collage (after the ship has left) ---------- */
+.preloader__inner--river,
+.river-stage {
+  transition: opacity .5s ease;
+}
+
+.preloader.is-collage .preloader__inner--river,
+.preloader.is-collage .river-stage {
+  opacity: 0;
+}
+
+.intro-collage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.intro-collage__title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.94);
+  transition: opacity .7s ease .25s, transform .9s var(--ease) .25s;
+}
+
+.intro-collage__deva {
+  font-family: var(--deva);
+  font-size: clamp(60px, 9vw, 150px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.intro-collage__sub {
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: clamp(11px, 1.1vw, 14px);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.intro-collage.is-in .intro-collage__title {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.intro-collage.is-out .intro-collage__title {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.08);
+  transition: opacity .5s ease, transform .7s ease;
+}
+
+/* Polaroid cards */
+.collage-card {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: min(var(--w), 21vh);
+  margin: 0;
+  padding: 8px 8px 0;
+  background: #FFFDF6;
+  border: 1.5px solid #1E1E1E;
+  border-radius: 6px;
+  box-shadow: 5px 6px 0 #1E1E1E, 0 18px 40px rgba(0, 0, 0, .18);
+  opacity: 0;
+  filter: blur(8px);
+  transform: translate(-50%, -50%) rotate(var(--r)) scale(.8);
+  transition:
+    opacity .6s ease calc(var(--i) * 110ms),
+    filter .6s ease calc(var(--i) * 110ms),
+    transform .8s var(--ease-spring) calc(var(--i) * 110ms);
+  will-change: transform, opacity;
+}
+
+.collage-card--square {
+  width: min(var(--w), 24vh);
+}
+
+.collage-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.collage-card--square img {
+  aspect-ratio: 1 / 1;
+}
+
+.collage-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 2px 9px;
+  font-family: var(--mono);
+  font-size: clamp(8px, .7vw, 10px);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #1E1E1E;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.collage-card figcaption span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.collage-card__deva {
+  font-family: var(--deva);
+  font-size: clamp(10px, .85vw, 12px);
+  letter-spacing: 0;
+  text-transform: none;
+  color: #5F6368;
+}
+
+/* Fade in, one by one */
+.intro-collage.is-in .collage-card {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(-50%, -50%) rotate(var(--r)) scale(1);
+}
+
+/* Scramble out: every card flies off away from the centre, spinning */
+.intro-collage.is-out .collage-card {
+  opacity: 0;
+  filter: blur(2px);
+  transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) rotate(var(--spin)) scale(.7);
+  transition:
+    transform .9s cubic-bezier(.55, 0, .8, .3) var(--o),
+    opacity .55s ease calc(var(--o) + .3s),
+    filter .55s ease var(--o);
+}
+
+@media (max-width: 700px) {
+  .collage-card--desktop {
+    display: none;
+  }
+
+  .collage-card,
+  .collage-card--square {
+    left: var(--mx);
+    top: var(--my);
+    width: min(40vw, 26vh);
+  }
+
+  .collage-card figcaption {
+    font-size: 8px;
+  }
+}
+
 /* Glowing blue water trail behind the ship */
 .trail {
   fill: none;

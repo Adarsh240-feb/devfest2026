@@ -1,10 +1,12 @@
 import Ship from '@/components/Ship';
+import IntroCollage from '@/components/IntroCollage';
 
 /**
  * Home-page intro: the GDG Prayagraj ship enters from beyond the left edge and
  * weaves an S-curve across the screen in 4 seconds. Behind it three river
  * trails (Ganga, Yamuna, Saraswati) merge into one glowing stream. Once the
- * ship has left past the right edge, the intro fades out and the page fades in.
+ * ship has left past the right edge, a photo collage of the city fades in and
+ * scrambles out, and the page fades in.
  *
  * - Plays every time the home page is opened.
  * - Click, tap, Esc or the "Skip intro" button ends it early.
@@ -96,6 +98,8 @@ export default function BoatPreloader() {
             <Ship id="shipMain" />
           </svg>
         </div>
+
+        <IntroCollage />
 
         <button className="preloader__skip" id="preloaderSkip" type="button">
           Skip intro <span aria-hidden="true">›</span>
