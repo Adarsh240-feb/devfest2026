@@ -571,7 +571,10 @@ em {
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  z-index: 2; /* sits over the cards */
+  padding: 34px 90px 40px;
   text-align: center;
+  background: radial-gradient(closest-side, var(--paper) 72%, transparent);
   opacity: 0;
   transform: translate(-50%, -50%) scale(.94);
   transition: opacity .7s ease .25s, transform .9s var(--ease) .25s;
@@ -582,6 +585,7 @@ em {
   font-size: clamp(60px, 9vw, 150px);
   line-height: 1.1;
   color: var(--ink);
+  text-shadow: 0 0 24px var(--paper), 0 0 48px var(--paper);
 }
 
 .intro-collage__sub {
@@ -609,9 +613,9 @@ em {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  width: min(var(--w), 21vh);
+  width: min(var(--w), 28vh);
   margin: 0;
-  padding: 8px 8px 0;
+  padding: 10px 10px 0;
   background: #FFFDF6;
   border: 1.5px solid #1E1E1E;
   border-radius: 6px;
@@ -627,7 +631,7 @@ em {
 }
 
 .collage-card--square {
-  width: min(var(--w), 24vh);
+  width: min(var(--w), 34vh);
 }
 
 .collage-card img {
@@ -647,9 +651,9 @@ em {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 8px 2px 9px;
+  padding: 9px 2px 11px;
   font-family: var(--mono);
-  font-size: clamp(8px, .7vw, 10px);
+  font-size: clamp(9px, .8vw, 12px);
   letter-spacing: .08em;
   text-transform: uppercase;
   color: #1E1E1E;
@@ -662,9 +666,16 @@ em {
   text-overflow: ellipsis;
 }
 
+.collage-card__credit {
+  font-size: .85em;
+  letter-spacing: .04em;
+  text-transform: none;
+  color: #80868B;
+}
+
 .collage-card__deva {
   font-family: var(--deva);
-  font-size: clamp(10px, .85vw, 12px);
+  font-size: clamp(11px, 1vw, 14px);
   letter-spacing: 0;
   text-transform: none;
   color: #5F6368;
@@ -697,7 +708,8 @@ em {
   .collage-card--square {
     left: var(--mx);
     top: var(--my);
-    width: min(40vw, 26vh);
+    width: min(47vw, 31vh);
+    padding: 7px 7px 0;
   }
 
   .collage-card figcaption {
