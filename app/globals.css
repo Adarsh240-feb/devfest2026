@@ -1428,13 +1428,71 @@ body.is-loaded .word>span {
   overflow: hidden;
 }
 
-.hero__canvas {
+/* Slow-turning mandala behind the hero (components/HeroMandala.jsx) */
+.hero-mandala {
+  --hm-ink: #660505;
   position: absolute;
-  inset: 0;
+  z-index: 0;
+  right: clamp(-260px, -12vw, -80px);
+  top: 50%;
+  width: min(980px, 78vw);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: .16;
+  -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 55%, transparent 72%);
+}
+
+[data-theme="dark"] .hero-mandala {
+  --hm-ink: #F8EACA;
+  opacity: .1;
+}
+
+.hero-mandala__svg {
   width: 100%;
   height: 100%;
-  z-index: 0;
-  opacity: .85
+  overflow: visible;
+  animation: hm-breathe 14s ease-in-out infinite;
+}
+
+.hm-ring {
+  fill: none;
+  stroke: var(--hm-ink);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transform-box: view-box;
+  transform-origin: 300px 300px;
+}
+
+.hm-ring circle[r="1.6"],
+.hm-ring circle[r="2.4"],
+.hm-ring circle[r="2.6"],
+.hm-ring circle[r="3"] {
+  fill: var(--hm-ink);
+  stroke: none;
+}
+
+.hm-ring--a { animation: hm-spin 90s linear infinite; }
+.hm-ring--b { animation: hm-spin 140s linear infinite reverse; }
+.hm-ring--c { animation: hm-spin 200s linear infinite; }
+.hm-ring--d { animation: hm-spin 240s linear infinite reverse; }
+.hm-ring--e { animation: hm-spin 300s linear infinite; }
+.hm-ring--f { animation: hm-spin 260s linear infinite reverse; }
+
+@keyframes hm-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hm-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mandala__svg,
+  .hm-ring { animation: none; }
 }
 
 .hero__grid {
@@ -5898,9 +5956,6 @@ body.is-loaded .word>span {
     transform: none !important
   }
 
-  .hero__canvas {
-    display: none
-  }
 
   .cursor {
     display: none

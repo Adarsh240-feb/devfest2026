@@ -1,5 +1,6 @@
 import SkipLink from '@/components/SkipLink';
 import BoatPreloader from '@/components/BoatPreloader';
+import HeroMandala from '@/components/HeroMandala';
 import Cursor from '@/components/Cursor';
 import ScrollProgress from '@/components/ScrollProgress';
 import SvgSprite from '@/components/SvgSprite';
@@ -78,7 +79,7 @@ export default function HomePage() {
       <main id="main">
         {/* ================= HERO ================= */}
         <section className="hero" id="home">
-          <canvas className="hero__canvas" id="confluenceCanvas" aria-hidden="true" />
+          <HeroMandala />
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__stickers" aria-hidden="true">
             {/* Left side icons & logos */}
