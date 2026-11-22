@@ -1358,18 +1358,18 @@
     const moments = {
       devfest: {
         img: 'assets/gallery/devfest2024-auditorium-crowd.jpg',
-        tag: 'Tech Conference',
-        caption: 'DevFest Prayagraj · 500+ Builders & Keynotes'
+        tag: 'DevFest Main Stage',
+        caption: 'DevFest Prayagraj · 500+ Builders, Talks & Hands-on Labs'
       },
       prayagraj: {
         img: 'assets/gallery/sangam_boats.jpg',
         tag: 'Triveni Sangam',
-        caption: 'Holy Confluence · Sangam Ghats & Boats'
+        caption: 'Where the Ganga, the Yamuna and the Saraswati meet · DevFest at the Sangam'
       },
       year: {
         img: 'assets/gallery/khusro_bagh.jpg',
-        tag: 'Heritage Monument',
-        caption: 'Khusro Bagh · Historic Architecture of Prayagraj'
+        tag: 'Prayagraj ’26',
+        caption: 'DevFest 2026 · Celebrating Tech, Code & Heritage in the Sangam City'
       }
     };
 
