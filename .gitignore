@@ -1,3 +1,10 @@
+# Next.js / Node
+node_modules/
+.next/
+out/
+.vercel
+next-env.d.ts
+
 # Large Google brand deliverables & raw design source files (exceeds GitHub limits)
 Deliverables/
 *.pptx

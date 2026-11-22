@@ -20,22 +20,22 @@ DevFest Prayagraj 2026 brings together developers, students, researchers, and te
 
 ## 🧭 Page Architecture & Features
 
-The website is architected into focused, modular, high-performance static pages:
+The website is a Next.js (App Router) app with focused, statically prerendered pages:
 
-1. **Main Home (`index.html`)**
+1. **Main Home (`/` · `app/page.jsx`)**
    - Hero fold with live canvas wave animation, countdown timer, and theme pillars (Build, Belong, Beyond).
    - Conference tracks overview, official partner lineup, schematic NCZCC venue map, and 7 grounded FAQs.
 
-2. **Agenda & Speakers (`agenda.html`)**
+2. **Agenda & Speakers (`/agenda` · `app/agenda/page.jsx`)**
    - Detailed conference timeline from 09:00 to 17:30 IST.
    - Interactive track tabs (*All*, *Main stage*, *Workshops*, *Breakouts*) and confirmed Google Developer Expert (GDE) speaker profiles.
 
-3. **The Crew (`team.html`)**
+3. **The Crew (`/team` · `app/team/page.jsx`)**
    - Verified 42-member GDG Prayagraj organizing body and crew.
    - Instant department filter tabs (*Tech Team*, *Design & Media*, *Logistics & Management*, *Social Media & PR*, *Hosting*, *Photography*).
    - Optimized high-resolution portrait avatars with Google color borders and hover animations.
 
-4. **Badge Studio (`badge.html`)**
+4. **Badge Studio (`/badge` · `app/badge/page.jsx`)**
    - Interactive HTML5 canvas badge generator.
    - Real-time attendee customization: name input, 6 role chips, 4 color current swatches, and high-res PNG download & Web Share API integration.
 
@@ -50,32 +50,31 @@ The website is architected into focused, modular, high-performance static pages:
 
 ```
 .
-├── devfest-prayagraj-2026/          # Production web application
-│   ├── assets/                      # Optimized static assets
-│   │   ├── brand/                   # DevFest 2026 official lockups and logos
-│   │   ├── fonts/                   # Figtree, Instrument Serif, DM Mono, Tiro Devanagari
-│   │   ├── gallery/                 # High-res optimized Prayagraj & conference photography
-│   │   ├── img/                     # Cultural WebP illustrations (Sangam, Fort, Kumbh)
-│   │   ├── team/                    # Compressed headshots of the GDG Prayagraj crew
-│   │   └── tracks/                  # Track badge illustrations (AI, Cloud, Android, Web)
-│   ├── css/
-│   │   └── style.css                # Google DevFest design tokens, layout grids, and animations
-│   ├── js/
-│   │   └── main.js                  # Vanilla JS engine (Preloader, badge canvas, spotlight, tabs)
-│   ├── agenda.html                  # Full schedule and speakers page
-│   ├── badge.html                   # Dedicated Badge Studio page
-│   ├── index.html                   # Streamlined landing page with JSON-LD schema
-│   ├── team.html                    # Complete crew roster and department filter page
-│   └── vercel.json                  # Static production deployment configuration
+├── app/                             # Next.js App Router
+│   ├── layout.jsx                   # <html>/<head>, theme bootstrap, font preloads, shared metadata
+│   ├── globals.css                  # Design tokens, layout grids, and animations (shared by all pages)
+│   ├── page.jsx                     # Home page (with JSON-LD Event schema)
+│   ├── agenda/                      # /agenda  — page.jsx + agenda.css
+│   ├── team/                        # /team    — page.jsx + team.css
+│   ├── badge/                       # /badge   — page.jsx + badge.css
+│   └── not-found.jsx                # 404 page (+ not-found.css)
+├── components/                      # Shared UI: SiteHeader, MobileMenu, SiteFooter, SvgSprite, ...
+│   └── SiteScripts.jsx              # Client component that boots lib/site.js after hydration
+├── lib/
+│   └── site.js                      # Vanilla JS interactions (preloader, badge canvas, spotlight, tabs)
+├── public/                          # Served as-is from the site root
+│   ├── assets/                      # brand/, fonts/, gallery/, img/, team/, tracks/
+│   ├── manifest.json, robots.txt, sitemap.xml
+├── next.config.mjs                  # Redirects for old *.html URLs + security/cache headers
 ├── vibe_images/                     # Landmark artwork references
-└── README.md                        # Documentation
+└── README.md
 ```
 
 ---
 
 ## 🛠️ Tech Stack & Engineering Standards
 
-- **Zero-Dependency Vanilla JavaScript (ES6+)**: Sub-millisecond execution, no bulky framework runtimes.
+- **Next.js 16 + React 19**: App Router, every page statically prerendered; interactions are plain JavaScript in `lib/site.js`.
 - **Modern CSS3 Architecture**: Responsive clamps, CSS Grid, Flexbox, custom design properties, and text masking.
 - **Accessibility & SEO**: Semantic HTML5 elements, `aria-*` state management, JSON-LD Event metadata, and smooth keyboard navigation.
 - **Asset Optimization**: Raw multi-megabyte imagery compressed to lightweight web-ready assets, reducing bundle weight by over 90%.
@@ -84,21 +83,16 @@ The website is architected into focused, modular, high-performance static pages:
 
 ## 💻 Local Development
 
-Run the project locally with any lightweight static server:
+Requires Node.js 20.9+.
 
 ```bash
-# Clone the repository
 git clone https://github.com/Adarsh240-feb/devfest2026.git
-cd devfest2026/devfest-prayagraj-2026
-
-# Using Python 3
-python -m http.server 8080
-
-# Using Node.js
-npx serve .
+cd devfest2026
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open `http://localhost:8080` in your browser.
+Production build: `npm run build && npm start`. On Vercel, the framework is auto-detected as Next.js.
 
 ---
 
