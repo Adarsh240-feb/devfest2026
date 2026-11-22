@@ -6,13 +6,13 @@ import Ship from '@/components/Ship';
  * trails (Ganga, Yamuna, Saraswati) merge into one glowing stream, and the
  * page "curtain" is wiped away in its wake to reveal the hero.
  *
- * - Plays once per browser session; later visits skip straight to the page.
+ * - Plays every time the home page is opened.
  * - Click, tap, Esc or the "Skip intro" button ends it early.
  * - lib/site.js (sailBoat) drives the ship, trails and curtain wipe.
  */
 
-// Runs before paint: decide whether the intro plays on this page load.
-const introGate = `(function(){var d=document;try{if(sessionStorage.getItem('devfest-intro-seen')){d.documentElement.classList.add('intro-seen');return;}}catch(e){}d.body.classList.add('is-preloading');})();`;
+// Runs before paint: lock page scrolling while the intro plays.
+const introGate = `document.body.classList.add('is-preloading');`;
 
 const RIVERS = [
   { id: 'Ganga', from: '#57CAFF', to: '#4285F4' },

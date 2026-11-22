@@ -445,11 +445,6 @@ em {
   cursor: pointer;
 }
 
-/* Already seen this session: no intro */
-.intro-seen .preloader {
-  display: none;
-}
-
 /* Covers the page; wiped away (soft edge) behind the ship via --wipe */
 .preloader__curtain {
   --wipe: 0px;
