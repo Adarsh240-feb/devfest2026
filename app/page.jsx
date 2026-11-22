@@ -1,7 +1,6 @@
 import SkipLink from '@/components/SkipLink';
 import BoatPreloader from '@/components/BoatPreloader';
 import HeroMandala from '@/components/HeroMandala';
-import Cursor from '@/components/Cursor';
 import ScrollProgress from '@/components/ScrollProgress';
 import SvgSprite from '@/components/SvgSprite';
 import SiteHeader from '@/components/SiteHeader';
@@ -71,7 +70,6 @@ export default function HomePage() {
       <SkipLink />
       <BoatPreloader />
       <div className="grain" aria-hidden="true" />
-      <Cursor />
       <ScrollProgress />
       <SvgSprite />
       <SiteHeader current="home" />
@@ -1469,7 +1467,7 @@ export default function HomePage() {
         </div>
       </div>
       <ToTop />
-      <noscript dangerouslySetInnerHTML={{ __html: "\n  <style>\n    .preloader{display:none!important}\n    body.is-preloading{overflow:auto!important}\n    .cursor{display:none!important}\n    [data-reveal]{opacity:1!important;transform:none!important}\n    .word>span{transform:none!important}\n  </style>\n" }} />
+      <noscript dangerouslySetInnerHTML={{ __html: "\n  <style>\n    .preloader{display:none!important}\n    body.is-preloading{overflow:auto!important}\n    [data-reveal]{opacity:1!important;transform:none!important}\n    .word>span{transform:none!important}\n  </style>\n" }} />
     </>
   );
 }

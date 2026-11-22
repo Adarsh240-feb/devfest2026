@@ -333,52 +333,8 @@ em {
   mix-blend-mode: multiply;
 }
 
-.cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .25s ease
-}
 
-.cursor__dot,
-.cursor__ring {
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none
-}
 
-.cursor__dot {
-  display: none
-}
-
-.cursor__ring {
-  width: 32px;
-  height: 32px;
-  border: 2px solid var(--blue);
-  background: rgba(66, 133, 244, 0.08);
-  box-shadow: 0 0 10px rgba(66, 133, 244, 0.25);
-  transition: width .24s var(--ease), height .24s var(--ease), border-color .24s, background .24s, box-shadow .24s;
-}
-
-@media (pointer:fine) {
-  .cursor.is-active {
-    opacity: 1
-  }
-
-  .cursor.is-hover .cursor__ring {
-    width: 52px;
-    height: 52px;
-    border-color: var(--yellow-pop);
-    background: rgba(251, 188, 4, 0.15);
-    box-shadow: 0 0 14px rgba(251, 188, 4, 0.35);
-  }
-}
 
 .scroll-progress {
   position: fixed;
@@ -5957,9 +5913,6 @@ body.is-loaded .word>span {
   }
 
 
-  .cursor {
-    display: none
-  }
 
   .hero-poster {
     transform: none

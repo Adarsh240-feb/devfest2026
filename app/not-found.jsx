@@ -1,5 +1,4 @@
 import SkipLink from '@/components/SkipLink';
-import Cursor from '@/components/Cursor';
 import ScrollProgress from '@/components/ScrollProgress';
 import SvgSprite from '@/components/SvgSprite';
 import SiteHeader from '@/components/SiteHeader';
@@ -16,7 +15,6 @@ export default function NotFound() {
   return (
     <>
       <SkipLink />
-      <Cursor />
       <ScrollProgress />
       <SvgSprite />
       <SiteHeader />
