@@ -443,16 +443,14 @@ em {
   overflow: hidden;
   background: transparent; /* the curtain below carries the background */
   cursor: pointer;
+  transition: opacity .9s ease-in-out, visibility .9s;
 }
 
-/* Covers the page; wiped away (soft edge) behind the ship via --wipe */
+/* Covers the page until the ship has left; then the whole intro fades out */
 .preloader__curtain {
-  --wipe: 0px;
   position: absolute;
   inset: 0;
   background: var(--paper);
-  -webkit-mask-image: linear-gradient(90deg, transparent calc(var(--wipe) - min(160px, 12vw)), #000 var(--wipe));
-  mask-image: linear-gradient(90deg, transparent calc(var(--wipe) - min(160px, 12vw)), #000 var(--wipe));
 }
 
 .preloader__deva {

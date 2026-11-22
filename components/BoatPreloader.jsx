@@ -3,8 +3,8 @@ import Ship from '@/components/Ship';
 /**
  * Home-page intro: the GDG Prayagraj ship enters from beyond the left edge and
  * weaves an S-curve across the screen in 4 seconds. Behind it three river
- * trails (Ganga, Yamuna, Saraswati) merge into one glowing stream, and the
- * page "curtain" is wiped away in its wake to reveal the hero.
+ * trails (Ganga, Yamuna, Saraswati) merge into one glowing stream. Once the
+ * ship has left past the right edge, the intro fades out and the page fades in.
  *
  * - Plays every time the home page is opened.
  * - Click, tap, Esc or the "Skip intro" button ends it early.
@@ -25,7 +25,7 @@ export default function BoatPreloader() {
     <>
       <script dangerouslySetInnerHTML={{ __html: introGate }} />
       <div className="preloader preloader--river" id="preloader">
-        {/* The curtain covers the page and is wiped away behind the ship */}
+        {/* The curtain covers the page until the ship has left */}
         <div className="preloader__curtain" id="preloaderCurtain" aria-hidden="true">
           <div className="preloader__inner preloader__inner--river">
             <div className="preloader__mark">
