@@ -54,6 +54,87 @@
   setProgress(12);
 
   /* ---------------------------------------------------------
+     Theme toggle (Light / Dark mode)
+     --------------------------------------------------------- */
+  const initTheme = () => {
+    const root = document.documentElement;
+    const STORAGE_KEY = 'devfest-theme';
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const getPreferredTheme = () => {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === 'dark' || saved === 'light') return saved;
+      } catch (err) {}
+      return mediaQuery.matches ? 'dark' : 'light';
+    };
+
+    const updateButtons = (theme) => {
+      const isDark = theme === 'dark';
+      const label = isDark ? 'Switch to light mode (T)' : 'Switch to dark mode (T)';
+      $$('#themeToggle, #mobileThemeToggle').forEach((btn) => {
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+        btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      });
+    };
+
+    const applyTheme = (theme, animate = false) => {
+      if (animate && !reduceMotion) {
+        root.classList.add('theme-transition');
+        window.clearTimeout(root._themeTimer);
+        root._themeTimer = window.setTimeout(() => {
+          root.classList.remove('theme-transition');
+        }, 360);
+      }
+      root.setAttribute('data-theme', theme);
+      updateButtons(theme);
+    };
+
+    const toggleTheme = (animate = true) => {
+      const current = root.getAttribute('data-theme') || getPreferredTheme();
+      const next = current === 'dark' ? 'light' : 'dark';
+      try {
+        localStorage.setItem(STORAGE_KEY, next);
+      } catch (err) {}
+      applyTheme(next, animate);
+    };
+
+    // Initialize button state to match current attribute or preference
+    const activeTheme = root.getAttribute('data-theme') || getPreferredTheme();
+    applyTheme(activeTheme, false);
+
+    // Click handler for desktop and mobile toggles
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('#themeToggle, #mobileThemeToggle');
+      if (btn) {
+        e.preventDefault();
+        toggleTheme(true);
+      }
+    });
+
+    // Keyboard shortcut: Press T or D to toggle theme
+    window.addEventListener('keydown', (e) => {
+      if (e.target.matches('input, textarea, select, [contenteditable]')) return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === 't' || e.key === 'T' || e.key === 'd' || e.key === 'D') {
+        toggleTheme(true);
+      }
+    });
+
+    // Listen for OS scheme change if user hasn't set an explicit preference
+    mediaQuery.addEventListener('change', (e) => {
+      try {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+          applyTheme(e.matches ? 'dark' : 'light', true);
+        }
+      } catch (err) {}
+    });
+  };
+
+  initTheme();
+
+  /* ---------------------------------------------------------
      Custom cursor
      --------------------------------------------------------- */
   if (finePointer && !reduceMotion) {

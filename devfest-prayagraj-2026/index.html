@@ -60,6 +60,9 @@
   }
 }
 </script>
+<script>
+(function(){try{var s=localStorage.getItem('devfest-theme');var t=s||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="is-preloading">
@@ -124,6 +127,8 @@
   <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
   <symbol id="i-terminal" viewBox="0 0 24 24"><path d="M4 17l6-5-6-5M12 19h8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-gdg-chevrons" viewBox="0 0 28 20"><path d="M8 3L2 10l6 7" stroke="#EA4335" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 3l6 7-6 7" stroke="#4285F4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
 </svg>
 
 <header class="site-header" id="siteHeader">
@@ -143,6 +148,12 @@
     </nav>
 
     <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme (T)">
+        <span class="theme-toggle__track">
+          <svg class="ic theme-toggle__icon theme-toggle__icon--sun"><use href="#i-sun"/></svg>
+          <svg class="ic theme-toggle__icon theme-toggle__icon--moon"><use href="#i-moon"/></svg>
+        </span>
+      </button>
       <a class="btn btn--small magnetic" href="#register">
         <span>Register</span>
         <svg class="ic"><use href="#i-arrow"/></svg>
@@ -157,7 +168,14 @@
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <div class="mobile-menu__head container">
     <span class="mono">DevFest Prayagraj ’26</span>
-    <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">Close</button>
+    <div class="mobile-menu__actions">
+      <button class="theme-toggle theme-toggle--mobile" id="mobileThemeToggle" type="button" aria-label="Toggle dark mode">
+        <svg class="ic theme-toggle__icon theme-toggle__icon--sun"><use href="#i-sun"/></svg>
+        <svg class="ic theme-toggle__icon theme-toggle__icon--moon"><use href="#i-moon"/></svg>
+        <span class="theme-toggle__text">Theme</span>
+      </button>
+      <button class="mobile-menu__close" id="menuClose" aria-label="Close menu">Close</button>
+    </div>
   </div>
   <nav class="mobile-menu__nav container" aria-label="Mobile">
     <a href="index.html"><span>01</span>Home</a>
