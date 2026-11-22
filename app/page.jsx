@@ -1290,7 +1290,7 @@ export default function HomePage() {
               the{" "}
               <em>Sangam.</em>
             </h2>
-            <p className="final-cta__copy" data-reveal="" style={{ "--d": "140ms" }}>Registration opens soon. Until then, save the date, tell a friend, and bring the idea you’ve been sitting on.</p>
+            <p className="final-cta__copy" data-reveal="" style={{ "--d": "140ms" }}>Registration is open. Grab your seat, tell a friend, and bring the idea you’ve been sitting on.</p>
             <div className="final-cta__actions" data-reveal="" style={{ "--d": "200ms" }}>
               <a className="btn btn--ink btn--large magnetic" {...registerLinkProps('https://gdg.community.dev/gdg-prayagraj/')}>
                 <span>Register now</span>
