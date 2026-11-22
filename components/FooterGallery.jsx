@@ -88,9 +88,6 @@ export default function FooterGallery() {
       <div className="footer-gallery__meta">
         <span className="footer-gallery__tag">प्रयागराज • The Digital Sangam</span>
         <span className="footer-gallery__sub">19 December 2026 · NCZCC Prayagraj</span>
-        <span className="footer-gallery__count mono" id="footerGalleryCount" aria-hidden="true">
-          00 / {String(SLOTS.length).padStart(2, '0')} moments
-        </span>
       </div>
     </div>
   );

@@ -7173,17 +7173,11 @@ body.is-loaded .word>span {
   font-size: 13px;
 }
 
-.footer-gallery__sub,
-.footer-gallery__count {
+.footer-gallery__sub {
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: .06em;
   opacity: .7;
-}
-
-.footer-gallery__count {
-  color: #F6B26B;
-  opacity: 1;
 }
 
 /* ---- Hover: a Google / GDG moment ---- */
