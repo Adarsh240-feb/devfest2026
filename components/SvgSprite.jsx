@@ -23,35 +23,35 @@ export default function SvgSprite() {
         <path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" />
       </symbol>
       <symbol id="av-base" viewBox="0 0 100 100">
-        <path d="M12 102c0-20 15-31 38-31s38 11 38 31Z" style={{ fill: "var(--av-shirt,#4285F4)" }} stroke="#1E1E1E" strokeWidth="2.5" />
-        <path d="M41 60h18v13a9 9 0 0 1-18 0Z" fill="#E8B88A" stroke="#1E1E1E" strokeWidth="2.5" />
-        <path d="M40 73 50 90l10-17" fill="none" stroke="#1E1E1E" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="44.5" y="88" width="11" height="9" rx="2" fill="#FFFDF6" stroke="#1E1E1E" strokeWidth="2" />
-        <circle cx="30.5" cy="46" r="4.5" fill="#E8B88A" stroke="#1E1E1E" strokeWidth="2.5" />
-        <circle cx="69.5" cy="46" r="4.5" fill="#E8B88A" stroke="#1E1E1E" strokeWidth="2.5" />
-        <ellipse cx="50" cy="44" rx="19.5" ry="22" fill="#E8B88A" stroke="#1E1E1E" strokeWidth="2.5" />
-        <ellipse cx="42.5" cy="45" rx="2.2" ry="2.8" fill="#1E1E1E" />
-        <ellipse cx="57.5" cy="45" rx="2.2" ry="2.8" fill="#1E1E1E" />
-        <path d="M43 54.5c4 4 10 4 14 0" fill="none" stroke="#1E1E1E" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M12 102c0-20 15-31 38-31s38 11 38 31Z" style={{ fill: "var(--av-shirt,#4285F4)" }} stroke="#1B2A45" strokeWidth="2.5" />
+        <path d="M41 60h18v13a9 9 0 0 1-18 0Z" fill="#E8B88A" stroke="#1B2A45" strokeWidth="2.5" />
+        <path d="M40 73 50 90l10-17" fill="none" stroke="#1B2A45" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="44.5" y="88" width="11" height="9" rx="2" fill="#FFFDF6" stroke="#1B2A45" strokeWidth="2" />
+        <circle cx="30.5" cy="46" r="4.5" fill="#E8B88A" stroke="#1B2A45" strokeWidth="2.5" />
+        <circle cx="69.5" cy="46" r="4.5" fill="#E8B88A" stroke="#1B2A45" strokeWidth="2.5" />
+        <ellipse cx="50" cy="44" rx="19.5" ry="22" fill="#E8B88A" stroke="#1B2A45" strokeWidth="2.5" />
+        <ellipse cx="42.5" cy="45" rx="2.2" ry="2.8" fill="#1B2A45" />
+        <ellipse cx="57.5" cy="45" rx="2.2" ry="2.8" fill="#1B2A45" />
+        <path d="M43 54.5c4 4 10 4 14 0" fill="none" stroke="#1B2A45" strokeWidth="2.4" strokeLinecap="round" />
       </symbol>
       <symbol id="av-h1" viewBox="0 0 100 100">
-        <path d="M30 41c-3-17 7-25 21-25s23 8 19 25c-2-8-7-12-15-13-8 3-18 4-25 13Z" fill="#1E1E1E" />
+        <path d="M30 41c-3-17 7-25 21-25s23 8 19 25c-2-8-7-12-15-13-8 3-18 4-25 13Z" fill="#1B2A45" />
       </symbol>
       <symbol id="av-h2" viewBox="0 0 100 100">
-        <path d="M30 42c-5-6-4-15 2-18 1-7 9-10 14-7 5-4 13-2 15 3 7 1 11 9 7 15 2 3 2 5 2 7-3-6-7-9-11-10-6 3-13 3-19 0-4 1-8 4-10 10Z" fill="#1E1E1E" />
+        <path d="M30 42c-5-6-4-15 2-18 1-7 9-10 14-7 5-4 13-2 15 3 7 1 11 9 7 15 2 3 2 5 2 7-3-6-7-9-11-10-6 3-13 3-19 0-4 1-8 4-10 10Z" fill="#1B2A45" />
       </symbol>
       <symbol id="av-h3" viewBox="0 0 100 100">
-        <path d="M30 41c-2-16 7-24 20-24s22 8 20 24c-4-7-9-11-14-12-9 1-19 3-26 12Z" fill="#1E1E1E" />
-        <g fill="none" stroke="#1E1E1E" strokeWidth="2.4">
+        <path d="M30 41c-2-16 7-24 20-24s22 8 20 24c-4-7-9-11-14-12-9 1-19 3-26 12Z" fill="#1B2A45" />
+        <g fill="none" stroke="#1B2A45" strokeWidth="2.4">
           <circle cx="42" cy="45.5" r="6.5" />
           <circle cx="58" cy="45.5" r="6.5" />
           <path d="M48.5 45.5h3M35.5 45l-5-1.5M64.5 45l5-1.5" />
         </g>
       </symbol>
       <symbol id="av-h4" viewBox="0 0 100 100">
-        <path d="M29 38c0-15 9-23 21-23s21 8 21 23Z" style={{ fill: "var(--av-shirt,#4285F4)" }} stroke="#1E1E1E" strokeWidth="2.5" strokeLinejoin="round" />
-        <path d="M27 38h46" stroke="#1E1E1E" strokeWidth="5" strokeLinecap="round" />
-        <circle cx="50" cy="13.5" r="3.5" fill="#1E1E1E" />
+        <path d="M29 38c0-15 9-23 21-23s21 8 21 23Z" style={{ fill: "var(--av-shirt,#4285F4)" }} stroke="#1B2A45" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M27 38h46" stroke="#1B2A45" strokeWidth="5" strokeLinecap="round" />
+        <circle cx="50" cy="13.5" r="3.5" fill="#1B2A45" />
       </symbol>
       <symbol id="i-plus" viewBox="0 0 24 24">
         <path d="M12 5v14M5 12h14" />

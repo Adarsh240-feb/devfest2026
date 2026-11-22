@@ -24,7 +24,10 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#F4F1E9',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FBF3E1' },
+    { media: '(prefers-color-scheme: dark)', color: '#0E1729' },
+  ],
 };
 
 // Runs before first paint so the saved / preferred theme never flashes.

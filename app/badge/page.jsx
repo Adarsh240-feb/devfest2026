@@ -104,19 +104,19 @@ export default function BadgePage() {
                 <div className="field">
                   <span className="field__label">Pick your current colour</span>
                   <div className="swatch-row" id="themeSwatches" role="group" aria-label="Choose badge colour">
-                    <button type="button" className="swatch is-active" data-theme="blue" style={{ "--swatch": "#C3ECF6" }} aria-label="Sangam blue" aria-pressed="true">
+                    <button type="button" className="swatch is-active" data-theme="blue" style={{ "--swatch": "#CFDAEC" }} aria-label="Sangam navy" aria-pressed="true">
                       <span />
                     </button>
                     {" "}
-                    <button type="button" className="swatch" data-theme="green" style={{ "--swatch": "#CCF6C5" }} aria-label="Yamuna green" aria-pressed="false">
+                    <button type="button" className="swatch" data-theme="green" style={{ "--swatch": "#D3EBD9" }} aria-label="Yamuna green" aria-pressed="false">
                       <span />
                     </button>
                     {" "}
-                    <button type="button" className="swatch" data-theme="yellow" style={{ "--swatch": "#FFE7A5" }} aria-label="Kumbh yellow" aria-pressed="false">
+                    <button type="button" className="swatch" data-theme="yellow" style={{ "--swatch": "#FBDDBE" }} aria-label="Kumbh saffron" aria-pressed="false">
                       <span />
                     </button>
                     {" "}
-                    <button type="button" className="swatch" data-theme="red" style={{ "--swatch": "#F8D8D8" }} aria-label="Fort red" aria-pressed="false">
+                    <button type="button" className="swatch" data-theme="red" style={{ "--swatch": "#F0D2CB" }} aria-label="Fort maroon" aria-pressed="false">
                       <span />
                     </button>
                   </div>

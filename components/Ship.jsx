@@ -5,7 +5,7 @@
  */
 
 export const GOOGLE = { blue: '#4285F4', red: '#EA4335', yellow: '#F9AB00', green: '#34A853' };
-const INK = '#1E1E1E';
+const INK = '#1B2A45';
 const HULL = '#1A5FD0';
 const WHITE = '#FFFDF6';
 const GLASS = '#BFE6F5';

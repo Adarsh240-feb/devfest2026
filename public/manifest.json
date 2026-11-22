@@ -4,8 +4,8 @@
   "description": "Where Ideas Find Their Confluence. 19 December 2026 at NCZCC Prayagraj. Organised by GDG Prayagraj.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F4F1E9",
-  "theme_color": "#4285F4",
+  "background_color": "#FBF3E1",
+  "theme_color": "#26406B",
   "orientation": "portrait-primary",
   "icons": [
     {
