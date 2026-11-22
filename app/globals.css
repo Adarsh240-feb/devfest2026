@@ -336,6 +336,20 @@ em {
 
 
 
+/* Cursor trail canvas (lib/site.js → initCursorTrail) */
+.cursor-trail {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9997;
+  pointer-events: none;
+}
+
+@media print {
+  .cursor-trail { display: none; }
+}
+
 .scroll-progress {
   position: fixed;
   left: 0;
