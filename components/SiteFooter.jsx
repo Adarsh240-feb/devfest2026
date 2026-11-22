@@ -1,3 +1,5 @@
+import FooterGallery from '@/components/FooterGallery';
+
 /**
  * @param {{ home?: boolean }} props
  *   On the home page, section links are in-page anchors (#venue) rather than /#venue.
@@ -53,39 +55,8 @@ export default function SiteFooter({ home = false }) {
           </div>
         </div>
 
-        {/* Footer spotlight: cursor-driven photo reveal through the wordmark (see lib/site.js) */}
-        <div aria-label="DevFest Prayagraj 2026 interactive reveal" className="footer-hero-reveal" id="footerSpotlight">
-          <div className="footer-hero-reveal__stage">
-            <div className="footer-hero-reveal__text footer-hero-reveal__text--base">
-              <span className="f-word" data-zone="devfest">DevFest</span>{' '}
-              <span className="f-word" data-zone="prayagraj">
-                <span className="f-letter-pop">P</span>rayagraj
-              </span>{' '}
-              <span className="f-word" data-zone="year">’26</span>
-            </div>
-            <div className="footer-hero-reveal__mask" id="footerMask">
-              <div className="footer-hero-reveal__text footer-hero-reveal__text--img" id="footerMaskText">
-                <span className="f-word">DevFest</span>{' '}
-                <span className="f-word">
-                  <span className="f-letter-pop">P</span>rayagraj
-                </span>{' '}
-                <span className="f-word">’26</span>
-              </div>
-            </div>
-            <div aria-hidden="true" className="footer-hero-reveal__glow" id="footerGlow" />
-            <div aria-hidden="true" className="footer-hero-reveal__card" id="footerCard">
-              <div className="footer-card__img-wrap">
-                <img alt="Prayagraj Moment" id="footerCardImg" src="/assets/gallery/sangam_boats.jpg" />
-                <span className="footer-card__badge" id="footerCardTag">Triveni Sangam</span>
-              </div>
-              <p className="footer-card__caption" id="footerCardCaption">Where the Ganga, the Yamuna and the Saraswati meet</p>
-            </div>
-          </div>
-          <div className="footer-hero-reveal__meta">
-            <span className="footer-hero-reveal__tag">प्रयागराज • The Digital Sangam</span>{' '}
-            <span className="footer-hero-reveal__sub">19 December 2026 · NCZCC Prayagraj</span>
-          </div>
-        </div>
+        {/* Scroll-driven polaroid wall of Prayagraj photos above the wordmark */}
+        <FooterGallery />
 
         <div className="footer__bottom">
           <p>© 2026 GDG Prayagraj. All rights reserved.</p>
