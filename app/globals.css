@@ -7113,10 +7113,19 @@ body.is-loaded .word>span {
 }
 
 /* Wordmark: one clean line, sits over the lower edge of the photo wall */
-.footer-gallery__wordmark {
+.footer-gallery__title {
   position: relative;
   z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: clamp(-60px, -4vw, -28px) 0 0;
+}
+
+.footer-gallery__wordmark {
+  position: relative;
+  margin: 0;
+  transition: transform .6s var(--ease-spring);
   font-family: var(--sans);
   font-weight: 800;
   font-size: clamp(2.6rem, 9.2vw, 9.4rem);
@@ -7128,7 +7137,13 @@ body.is-loaded .word>span {
   text-shadow: 0 6px 30px rgba(10, 18, 34, .65);
 }
 
-.footer-gallery__p {
+.fg-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* The "P" of Prayagraj keeps its orange accent at rest */
+.fg-word--city .fg-l:first-child {
   color: #EF8849;
 }
 
@@ -7171,11 +7186,110 @@ body.is-loaded .word>span {
   opacity: 1;
 }
 
+/* ---- Hover: a Google / GDG moment ---- */
+.footer-gallery {
+  --mx: 50%;
+  --my: 70%;
+}
+
+/* Google-colour glow following the cursor */
+.footer-gallery__glow {
+  position: absolute;
+  inset: -10% -5% 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle 160px at calc(var(--mx) - 90px) var(--my), rgba(66, 133, 244, .30), transparent 70%),
+    radial-gradient(circle 150px at calc(var(--mx) + 90px) var(--my), rgba(234, 67, 53, .24), transparent 70%),
+    radial-gradient(circle 150px at var(--mx) calc(var(--my) - 80px), rgba(251, 188, 4, .22), transparent 70%),
+    radial-gradient(circle 160px at var(--mx) calc(var(--my) + 80px), rgba(52, 168, 83, .24), transparent 70%);
+  filter: blur(10px);
+  transition: opacity .5s ease;
+}
+
+/* GDG chevrons, hidden beside the wordmark until hover */
+.fg-chevron {
+  flex: none;
+  width: .42em;
+  font-size: clamp(2.6rem, 9.2vw, 9.4rem);
+  line-height: 0;
+  opacity: 0;
+  transition: opacity .4s ease, transform .6s var(--ease-spring);
+}
+
+.fg-chevron svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.fg-chevron path {
+  fill: none;
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+
+.fg-chev-a { stroke: #EA4335; }
+.fg-chev-b { stroke: #4285F4; }
+.fg-chev-c { stroke: #34A853; }
+.fg-chev-d { stroke: #FBBC04; }
+
+.fg-chevron--left { transform: translateX(-60px) rotate(-20deg); margin-right: -.42em; }
+.fg-chevron--right { transform: translateX(60px) rotate(20deg); margin-left: -.42em; }
+
+.fg-l {
+  display: inline-block;
+  transition: color .35s ease calc(var(--i) * 35ms);
+}
+
+.footer-gallery:hover .footer-gallery__glow,
+.footer-gallery.is-celebrate .footer-gallery__glow {
+  opacity: 1;
+}
+
+.footer-gallery:hover .footer-gallery__wordmark,
+.footer-gallery.is-celebrate .footer-gallery__wordmark {
+  transform: scale(.86);
+}
+
+.footer-gallery:hover .fg-chevron,
+.footer-gallery.is-celebrate .fg-chevron {
+  opacity: 1;
+  transform: none;
+  margin: 0;
+}
+
+.footer-gallery:hover .fg-l,
+.footer-gallery.is-celebrate .fg-l {
+  color: var(--g);
+  animation: fg-wave .8s var(--ease) calc(var(--i) * 45ms) both;
+}
+
+/* The year keeps its serif but joins the colour wave */
+.footer-gallery:hover .footer-gallery__year .fg-l,
+.footer-gallery.is-celebrate .footer-gallery__year .fg-l {
+  color: var(--g);
+}
+
+@keyframes fg-wave {
+  0% { transform: translateY(0) rotate(0); }
+  35% { transform: translateY(-.14em) rotate(-4deg); }
+  65% { transform: translateY(.03em) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-gallery:hover .fg-l,
+  .footer-gallery.is-celebrate .fg-l { animation: none; }
+}
+
 @media (max-width: 700px) {
   .fg-card--wide { display: none; }
   .fg-card { width: clamp(84px, 26vw, 120px); }
   .footer-gallery__stage { height: 300px; }
   .footer-gallery__wordmark { white-space: normal; font-size: clamp(2.6rem, 14vw, 4.2rem); }
+  .fg-chevron { font-size: clamp(2.6rem, 14vw, 4.2rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {

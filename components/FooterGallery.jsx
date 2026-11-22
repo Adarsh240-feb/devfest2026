@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { PHOTOS } from '@/lib/photos';
 
 /**
@@ -26,6 +27,15 @@ const SLOTS = [
   { x: 57, y: 52, r: -5, z: 5, wide: true },
 ];
 
+const GOOGLE = ['#4285F4', '#EA4335', '#FBBC04', '#34A853'];
+
+// Wordmark split into letters; `start` keeps one running index for the wave.
+const WORDS = [
+  { text: 'DevFest', start: 0 },
+  { text: 'Prayagraj', start: 7, className: 'fg-word--city' },
+  { text: '’26', start: 16, className: 'footer-gallery__year' },
+];
+
 export default function FooterGallery() {
   return (
     <div className="footer-gallery" id="footerGallery">
@@ -48,9 +58,32 @@ export default function FooterGallery() {
         })}
       </div>
 
-      <p className="footer-gallery__wordmark">
-        DevFest <span className="footer-gallery__p">P</span>rayagraj <span className="footer-gallery__year">’26</span>
-      </p>
+      {/* Hover (or once all photos have landed): letters wave in Google colours,
+          GDG chevrons slide in to frame the name, and a Google-colour glow follows the cursor. */}
+      <div className="footer-gallery__glow" aria-hidden="true" />
+      <div className="footer-gallery__title">
+        <span className="fg-chevron fg-chevron--left" aria-hidden="true">
+          <svg viewBox="0 0 40 64"><path d="M30 6 L8 32" className="fg-chev-a" /><path d="M8 32 L30 58" className="fg-chev-b" /></svg>
+        </span>
+        <p className="footer-gallery__wordmark" aria-label="DevFest Prayagraj ’26">
+          {WORDS.map((word, w) => (
+            <Fragment key={word.text}>
+              <span className={`fg-word${word.className ? ` ${word.className}` : ''}`} aria-hidden="true">
+                {[...word.text].map((ch, k) => {
+                  const i = word.start + k;
+                  return (
+                    <span key={k} className="fg-l" style={{ '--i': i, '--g': GOOGLE[i % 4] }}>{ch}</span>
+                  );
+                })}
+              </span>
+              {w < WORDS.length - 1 ? ' ' : null}
+            </Fragment>
+          ))}
+        </p>
+        <span className="fg-chevron fg-chevron--right" aria-hidden="true">
+          <svg viewBox="0 0 40 64"><path d="M10 6 L32 32" className="fg-chev-c" /><path d="M32 32 L10 58" className="fg-chev-d" /></svg>
+        </span>
+      </div>
 
       <div className="footer-gallery__meta">
         <span className="footer-gallery__tag">प्रयागराज • The Digital Sangam</span>
