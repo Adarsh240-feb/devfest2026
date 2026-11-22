@@ -3,6 +3,7 @@ import SkipLink from '@/components/SkipLink';
 import BoatPreloader from '@/components/BoatPreloader';
 import HeroMandala from '@/components/HeroMandala';
 import RibbonMarquee from '@/components/RibbonMarquee';
+import CollegePartners from '@/components/CollegePartners';
 import ScrollProgress from '@/components/ScrollProgress';
 import SvgSprite from '@/components/SvgSprite';
 import SiteHeader from '@/components/SiteHeader';
@@ -651,6 +652,7 @@ export default function HomePage() {
                 </a>
               </article>
             </div>
+            <CollegePartners />
           </div>
         </section>
         {/* ================= VENUE ================= */}
