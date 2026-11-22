@@ -51,7 +51,6 @@ export default function FooterGallery() {
               <img src={`/assets/collage/${p.src}.webp`} alt="" loading="lazy" decoding="async" width={p.square ? 640 : 600} height={p.square ? 640 : 800} />
               <figcaption>
                 <span>{p.caption}</span>
-                <span className="fg-card__deva">{p.deva}</span>
               </figcaption>
             </figure>
           );
@@ -86,7 +85,7 @@ export default function FooterGallery() {
       </div>
 
       <div className="footer-gallery__meta">
-        <span className="footer-gallery__tag">प्रयागराज • The Digital Sangam</span>
+        <span className="footer-gallery__tag">The Digital Sangam · Prayagraj</span>
         <span className="footer-gallery__sub">19 December 2026 · NCZCC Prayagraj</span>
       </div>
     </div>

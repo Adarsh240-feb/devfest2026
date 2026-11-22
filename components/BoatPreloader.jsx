@@ -34,9 +34,7 @@ export default function BoatPreloader() {
               <img src="/assets/brand/devfest-2026-no-date.png" alt="" width="1600" height="238" />
             </div>
             <div className="preloader__meta">
-              <span>
-                GDG Prayagraj <span className="preloader__deva">· जीडीजी प्रयागराज</span>
-              </span>
+              <span>GDG Prayagraj</span>
               <span>19 · 12 · 26</span>
             </div>
             <p className="preloader__note">Where three rivers meet</p>

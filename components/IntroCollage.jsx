@@ -11,8 +11,8 @@ export default function IntroCollage() {
   return (
     <div className="intro-collage" id="introCollage" aria-hidden="true">
       <div className="intro-collage__title">
-        <span className="intro-collage__deva">प्रयागराज</span>
-        <span className="intro-collage__sub">Prayagraj · 19 · 12 · 26</span>
+        <span className="intro-collage__deva">Prayagraj</span>
+        <span className="intro-collage__sub">19 · 12 · 26</span>
       </div>
 
       {PHOTOS.map((p, i) => {
@@ -41,7 +41,6 @@ export default function IntroCollage() {
             <img src={`/assets/collage/${p.src}.webp`} alt="" width={p.square ? 640 : 600} height={p.square ? 640 : 800} decoding="async" />
             <figcaption>
               <span>{p.caption}</span>
-              <span className="collage-card__deva">{p.deva}</span>
               {p.credit && <span className="collage-card__credit">{p.credit}</span>}
             </figcaption>
           </figure>

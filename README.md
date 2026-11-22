@@ -3,7 +3,7 @@
 > **Where Ideas Find Their Confluence**  
 > 19 December 2026 • North Central Zone Cultural Centre (NCZCC), Civil Lines, Prayagraj  
 > Organised by **Google Developer Groups (GDG) Prayagraj**  
-> 🌐 **Live Website**: [https://devfest-prayagraj-2026.vercel.app](https://devfest-prayagraj-2026.vercel.app)
+> 🌐 **Live Website**: [https://devfest2026-dusky.vercel.app/](https://devfest2026-dusky.vercel.app/)
 
 ---
 

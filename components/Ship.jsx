@@ -172,8 +172,8 @@ export default function Ship({ id }) {
             <circle key={x} cx={x} cy="-50" r="4.5" />
           ))}
         </g>
-        <text x="10" y="-22" className="ship__name">जीडीजी प्रयागराज</text>
-        <text x="-214" y="-22" className="ship__deva">संगम</text>
+        <text x="10" y="-22" className="ship__name">GDG PRAYAGRAJ</text>
+        <text x="-214" y="-22" className="ship__deva">SANGAM</text>
       </g>
       <path d={hull} fill="none" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
 

@@ -20,7 +20,7 @@ const ITEMS = [
   { kind: 'track', text: 'Firebase', logo: 'firebase' },
   { kind: 'track', text: 'Web', logo: 'chrome' },
   { kind: 'brand', text: 'GDG Prayagraj' },
-  { kind: 'hi', text: 'प्रयागराज' },
+  { kind: 'brand', text: 'Prayagraj' },
   { kind: 'meta', text: 'NCZCC · Civil Lines' },
   { kind: 'tag', text: '#DevFestPrayagraj' },
 ];
