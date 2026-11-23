@@ -8,10 +8,6 @@ import { PHOTOS } from '@/lib/photos';
  * Photos and their layout come from lib/photos.js.
  */
 export default function IntroCollage() {
-  // Skip rendering if intro already seen
-  if (typeof window !== 'undefined' && window.localStorage.getItem('introSeen')) {
-    return null;
-  }
   return (
     <div className="intro-collage" id="introCollage" aria-hidden="true">
       <div className="intro-collage__title">

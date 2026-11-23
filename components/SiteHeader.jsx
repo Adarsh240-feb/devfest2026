@@ -27,7 +27,11 @@ export default function SiteHeader({ current }) {
         </a>
         <nav aria-label="Primary" className="desktop-nav">
           {NAV.map((item) => (
-            <a key={item.key} href={item.href} className={item.key === current ? 'is-current' : undefined}>
+            <a
+              key={item.key}
+              href={onHome && item.href.startsWith('/#') ? item.href.slice(1) : item.href}
+              className={item.key === current ? 'is-current' : undefined}
+            >
               {item.label}
             </a>
           ))}

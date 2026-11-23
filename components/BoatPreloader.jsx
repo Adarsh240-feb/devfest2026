@@ -13,8 +13,24 @@ import IntroCollage from '@/components/IntroCollage';
  * - lib/site.js (sailBoat) drives the ship, trails and curtain wipe.
  */
 
-// Runs before paint: lock page scrolling ONLY for first-time visitors who haven't seen the intro.
-const introGate = `try{if(localStorage.getItem('introSeen')){document.documentElement.classList.add('no-intro');}else{document.body.classList.add('is-preloading');}}catch(e){document.body.classList.add('is-preloading');}`;
+// Runs before paint: lock page scrolling on reload / direct visit, but skip when clicking to Home or sections like #partners
+const introGate = `try{
+  var isReload = false;
+  var nav = window.performance && performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  if (nav && nav.type === 'reload') { isReload = true; }
+  else if (window.performance && performance.navigation && performance.navigation.type === 1) { isReload = true; }
+  
+  if (window.location.hash && window.location.hash !== '#home') {
+    document.documentElement.classList.add('no-intro');
+  } else if (isReload) {
+    sessionStorage.removeItem('skipIntroForHomeNav');
+    document.body.classList.add('is-preloading');
+  } else if (sessionStorage.getItem('skipIntroForHomeNav') === 'true') {
+    document.documentElement.classList.add('no-intro');
+  } else {
+    document.body.classList.add('is-preloading');
+  }
+}catch(e){document.body.classList.add('is-preloading');}`;
 
 const RIVERS = [
   { id: 'Ganga', from: '#57CAFF', to: '#4285F4' },
