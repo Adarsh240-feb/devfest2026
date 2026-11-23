@@ -13,8 +13,8 @@ import IntroCollage from '@/components/IntroCollage';
  * - lib/site.js (sailBoat) drives the ship, trails and curtain wipe.
  */
 
-// Runs before paint: lock page scrolling while the intro plays.
-const introGate = `document.body.classList.add('is-preloading');`;
+// Runs before paint: lock page scrolling ONLY for first-time visitors who haven't seen the intro.
+const introGate = `try{if(localStorage.getItem('introSeen')){document.documentElement.classList.add('no-intro');}else{document.body.classList.add('is-preloading');}}catch(e){document.body.classList.add('is-preloading');}`;
 
 const RIVERS = [
   { id: 'Ganga', from: '#57CAFF', to: '#4285F4' },

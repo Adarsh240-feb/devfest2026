@@ -6,6 +6,7 @@ import MobileMenu from '@/components/MobileMenu';
 import SiteFooter from '@/components/SiteFooter';
 import ToTop from '@/components/ToTop';
 import './agenda.css';
+import { PREVIOUS_SPEAKERS } from '@/lib/previousSpeakers';
 
 export const metadata = {
   title: {
@@ -37,6 +38,7 @@ export default function AgendaPage() {
       <SiteHeader current="agenda" />
       <MobileMenu />
       <main id="main">
+        {/* ================= HERO ================= */}
         <section className="agenda-page-hero">
           <div className="container">
             <a className="back-btn" href="/">
@@ -54,6 +56,7 @@ export default function AgendaPage() {
             </p>
           </div>
         </section>
+
         {/* ================= PROGRAMME ================= */}
         <section className="section programme" id="programme">
           <div className="container">
@@ -237,6 +240,7 @@ export default function AgendaPage() {
             </div>
           </div>
         </section>
+
         {/* ================= SPEAKERS ================= */}
         <section className="section speakers" id="speakers">
           <div className="speakers__marquee" aria-hidden="true">
@@ -414,6 +418,43 @@ export default function AgendaPage() {
                   <span className="speaker-card__foot">Keynote Session</span>
                 </article>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= PREVIOUS SPEAKERS ================= */}
+        <section className="section previous-speakers" id="previous-speakers">
+          <div className="container">
+            <div className="speaker-wall__head" data-reveal="">
+              <div>
+                <div className="section-label" style={{ marginBottom: "8px" }}>
+                  <span>05</span> Past editions
+                </div>
+                <h3>
+                  Previous{" "}
+                  <em>Speakers.</em>
+                </h3>
+              </div>
+              <span className="speaker-wall__badge">DevFest Alumni</span>
+            </div>
+            <div className="speaker-wall__grid">
+              {PREVIOUS_SPEAKERS.map((sp, idx) => (
+                <article
+                  key={sp.name}
+                  className={`speaker-card speaker-card--${sp.color || 'blue'} tilt`}
+                  data-reveal=""
+                  style={{ "--d": `${idx * 70}ms` }}
+                >
+                  <div className="speaker-card__top">
+                    <div className="speaker-card__avatar">
+                      <img src={sp.photo} alt={sp.name} className="speaker-card__img" width="78" height="78" loading="lazy" />
+                    </div>
+                    <span className="speaker-card__track">{sp.organization}</span>
+                  </div>
+                  <h4>{sp.name}</h4>
+                  <p className="speaker-card__role">{sp.title}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>

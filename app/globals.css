@@ -364,6 +364,21 @@ em {
   background: linear-gradient(90deg, var(--blue) 0%, var(--green) 36%, var(--yellow) 68%, var(--red) 100%)
 }
 
+/* Returning visitors who have already seen intro skip preloader immediately */
+html.no-intro #preloader,
+html.no-intro .preloader,
+html.no-intro .preloader__curtain,
+html.no-intro .river-stage,
+html.no-intro .intro-collage {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+html.no-intro body.is-preloading {
+  overflow: visible !important;
+}
+
 /* ---------- Preloader ---------- */
 .preloader {
   position: fixed;
@@ -2827,7 +2842,35 @@ body.is-loaded .word>span {
   border-radius: 50%;
   border: 1.5px solid var(--ink);
   margin-top: 6px;
-  position: relative
+  position: relative;
+  animation: dot-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); box-shadow: 0 0 8px rgba(38, 64, 107, 0.45); }
+}
+
+/* Ambient continuous floating animations */
+@keyframes ambient-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.agenda-tag,
+.team-count-badge,
+.speaker-wall__badge {
+  display: inline-block;
+  animation: ambient-float 4.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agenda-tag,
+  .team-count-badge,
+  .speaker-wall__badge,
+  .agenda-item__dot {
+    animation: none !important;
+  }
 }
 
 .agenda-item__dot::after {
@@ -2912,6 +2955,52 @@ body.is-loaded .word>span {
 }
 
 /* ---------- Speakers ---------- */
+
+/* Previous speakers section */
+.previous-speakers {
+  background: var(--paper-2);
+  border-bottom: 1.5px solid var(--ink);
+  padding: clamp(60px, 8vw, 100px) 0;
+  position: relative;
+}
+
+.speaker-card__avatar {
+  position: relative;
+  width: 78px;
+  height: 78px;
+  flex: none;
+  border-radius: 50%;
+}
+
+.speaker-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  border: 2px solid var(--ink);
+  background: var(--c-soft, var(--paper));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.speaker-card:hover .speaker-card__img {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+@media (max-width: 640px) {
+  .speaker-card__avatar {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+/* Gray variant for previous speakers cards */
+.speaker-card--gray {
+  background-color: var(--paper-2);
+  border-color: var(--line-strong);
+}
+
 .speakers {
   background: var(--yellow-soft);
   border-top: 1.5px solid var(--ink);
