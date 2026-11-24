@@ -100,7 +100,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Ankit Kumar Verma</h3>
                 <p className="person__role">Organizer</p>
-                <span className="person__tag">Leadership</span>
               </article>
               <article className="person person--green tilt" data-dept="leadership" data-hi="Hello!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -114,7 +113,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Hridyesh Gupta</h3>
                 <p className="person__role">Co-organizer</p>
-                <span className="person__tag">Leadership</span>
               </article>
               <article className="person person--yellow tilt" data-dept="tech-team" data-hi="Code & Build!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -128,7 +126,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Gautam Kumar Maurya</h3>
                 <p className="person__role">Tech Team</p>
-                <span className="person__tag">Tech Team</span>
               </article>
               <article className="person person--red tilt" data-dept="tech-team" data-hi="Open Source!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -142,7 +139,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Adarsh Kesharwani</h3>
                 <p className="person__role">Tech Team</p>
-                <span className="person__tag">Tech Team</span>
               </article>
               <article className="person person--yellow tilt" data-dept="tech-team" data-hi="Building!" data-reveal="" style={{ "--d": "0ms" }}>
                 <div className="person__avatar">
@@ -156,7 +152,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Aryan Dubey</h3>
                 <p className="person__role">Tech Team</p>
-                <span className="person__tag">Tech Team</span>
               </article>
               <article className="person person--red tilt" data-dept="tech-team" data-hi="Scalability!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -170,7 +165,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Harsh Srivastava</h3>
                 <p className="person__role">Tech Team</p>
-                <span className="person__tag">Tech Team</span>
               </article>
               <article className="person person--blue tilt" data-dept="tech-team" data-hi="Full Stack!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -184,7 +178,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Kavaljeet Singh</h3>
                 <p className="person__role">Tech Team</p>
-                <span className="person__tag">Tech Team</span>
               </article>
               <article className="person person--green tilt" data-dept="tech-team" data-hi="Dev World!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -198,7 +191,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Vaishnavi Mishra</h3>
                 <p className="person__role">Tech Team</p>
-                <span className="person__tag">Tech Team</span>
               </article>
               <article className="person person--yellow tilt" data-dept="design-and-media" data-hi="Motion & Art!" data-reveal="" style={{ "--d": "200ms" }}>
                 <div className="person__avatar">
@@ -212,7 +204,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Harsh Kushwaha</h3>
                 <p className="person__role">{"Design & Media Lead"}</p>
-                <span className="person__tag">{"Design & Media"}</span>
               </article>
               <article className="person person--red tilt" data-dept="design-and-media" data-hi="Visuals!" data-reveal="" style={{ "--d": "250ms" }}>
                 <div className="person__avatar">
@@ -226,7 +217,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Syed Sohrab Haider Rizvi</h3>
                 <p className="person__role">{"Design & Media"}</p>
-                <span className="person__tag">{"Design & Media"}</span>
               </article>
               <article className="person person--blue tilt" data-dept="design-and-media" data-hi="Creative!" data-reveal="" style={{ "--d": "0ms" }}>
                 <div className="person__avatar">
@@ -240,7 +230,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Afreen Hashmi</h3>
                 <p className="person__role">{"Design & Media"}</p>
-                <span className="person__tag">{"Design & Media"}</span>
               </article>
               <article className="person person--green tilt" data-dept="design-and-media" data-hi="Design Lab!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -257,7 +246,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Ayushi Keshari</h3>
                 <p className="person__role">{"Design & Media"}</p>
-                <span className="person__tag">{"Design & Media"}</span>
               </article>
               <article className="person person--yellow tilt" data-dept="design-and-media" data-hi="Media Vibes!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -274,7 +262,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Vanshika Sharma</h3>
                 <p className="person__role">{"Design & Media"}</p>
-                <span className="person__tag">{"Design & Media"}</span>
               </article>
               <article className="person person--red tilt" data-dept="social-media-and-pr" data-hi="Trending!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -288,7 +275,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Amit Yadav</h3>
                 <p className="person__role">{"Social Media & PR"}</p>
-                <span className="person__tag">{"Social Media & PR"}</span>
               </article>
               <article className="person person--blue tilt" data-dept="social-media-and-pr" data-hi="Outreach!" data-reveal="" style={{ "--d": "200ms" }}>
                 <div className="person__avatar">
@@ -302,7 +288,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Anshuman Rai</h3>
                 <p className="person__role">{"Social Media & PR"}</p>
-                <span className="person__tag">{"Social Media & PR"}</span>
               </article>
               <article className="person person--green tilt" data-dept="social-media-and-pr" data-hi="Partners!" data-reveal="" style={{ "--d": "250ms" }}>
                 <div className="person__avatar">
@@ -316,7 +301,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Komal Pandey</h3>
                 <p className="person__role">{"Sponsor & Promotion"}</p>
-                <span className="person__tag">{"Social Media & PR"}</span>
               </article>
               <article className="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Operations!" data-reveal="" style={{ "--d": "0ms" }}>
                 <div className="person__avatar">
@@ -330,7 +314,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Animesh Pathak</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--red tilt" data-dept="logistics-and-management" data-hi="On Ground!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -347,7 +330,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Atul Singh</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--blue tilt" data-dept="logistics-and-management" data-hi="Execution!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -361,7 +343,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Mohd Shadab</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--green tilt" data-dept="logistics-and-management" data-hi="Coordination!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -375,7 +356,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Priyankar Shukla</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Leadership!" data-reveal="" style={{ "--d": "200ms" }}>
                 <div className="person__avatar">
@@ -389,7 +369,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Reeti Singh</h3>
                 <p className="person__role">{"Logistics & Leadership"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--red tilt" data-dept="logistics-and-management" data-hi="Impact!" data-reveal="" style={{ "--d": "250ms" }}>
                 <div className="person__avatar">
@@ -403,7 +382,6 @@ export default function TeamPage() {
                 </div>
                 <h3>SARTHAK SINGH</h3>
                 <p className="person__role">{"Logistics & Operations"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--blue tilt" data-dept="logistics-and-management" data-hi="Management!" data-reveal="" style={{ "--d": "0ms" }}>
                 <div className="person__avatar">
@@ -417,7 +395,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Shweta Mishra</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--green tilt" data-dept="logistics-and-management" data-hi="Logistics!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -434,7 +411,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Suryansh Tripathi</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Strategy!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -448,7 +424,6 @@ export default function TeamPage() {
                 </div>
                 <h3>T Ebenezer Rao</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--red tilt" data-dept="logistics-and-management" data-hi="Operations!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -462,7 +437,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Abhinisht Singh</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--blue tilt" data-dept="logistics-and-management" data-hi="Execution!" data-reveal="" style={{ "--d": "200ms" }}>
                 <div className="person__avatar">
@@ -479,7 +453,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Avi Dubey</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--green tilt" data-dept="logistics-and-management" data-hi="Support!" data-reveal="" style={{ "--d": "250ms" }}>
                 <div className="person__avatar">
@@ -496,7 +469,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Deepesh Mani Shukla</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Coordination!" data-reveal="" style={{ "--d": "0ms" }}>
                 <div className="person__avatar">
@@ -513,7 +485,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Harshit Bind</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--red tilt" data-dept="logistics-and-management" data-hi="Logistics!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -527,7 +498,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Sakshi Rai</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--blue tilt" data-dept="logistics-and-management" data-hi="Operations!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -544,7 +514,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Sankalp Bansal</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--green tilt" data-dept="logistics-and-management" data-hi="Management!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -561,7 +530,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Siddhi Srivastava</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--yellow tilt" data-dept="logistics-and-management" data-hi="Support!" data-reveal="" style={{ "--d": "200ms" }}>
                 <div className="person__avatar">
@@ -575,7 +543,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Sweety Gupta</h3>
                 <p className="person__role">{"Logistics & Management"}</p>
-                <span className="person__tag">{"Logistics & Management"}</span>
               </article>
               <article className="person person--green tilt" data-dept="hosting" data-hi="Stage Host!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -589,7 +556,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Shivaansh Singh</h3>
                 <p className="person__role">{"Hosting & Emcee"}</p>
-                <span className="person__tag">Hosting</span>
               </article>
               <article className="person person--yellow tilt" data-dept="hosting" data-hi="Emcee!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -603,7 +569,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Mahin Farooqui</h3>
                 <p className="person__role">{"Hosting & Emcee"}</p>
-                <span className="person__tag">Hosting</span>
               </article>
               <article className="person person--red tilt" data-dept="hosting" data-hi="Anchor!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -617,7 +582,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Sakshi Pandey</h3>
                 <p className="person__role">{"Hosting & Emcee"}</p>
-                <span className="person__tag">Hosting</span>
               </article>
               <article className="person person--blue tilt" data-dept="hosting" data-hi="Welcome All!" data-reveal="" style={{ "--d": "200ms" }}>
                 <div className="person__avatar">
@@ -631,7 +595,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Shubhangi Shukla</h3>
                 <p className="person__role">{"Hosting & Emcee"}</p>
-                <span className="person__tag">Hosting</span>
               </article>
               <article className="person person--green tilt" data-dept="hosting" data-hi="Stage Energy!" data-reveal="" style={{ "--d": "250ms" }}>
                 <div className="person__avatar">
@@ -648,7 +611,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Vedanshi Singh</h3>
                 <p className="person__role">{"Hosting & Emcee"}</p>
-                <span className="person__tag">Hosting</span>
               </article>
               <article className="person person--yellow tilt" data-dept="photography" data-hi="Lens Focus!" data-reveal="" style={{ "--d": "0ms" }}>
                 <div className="person__avatar">
@@ -665,7 +627,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Prakhar Rai</h3>
                 <p className="person__role">Photography</p>
-                <span className="person__tag">Photography</span>
               </article>
               <article className="person person--red tilt" data-dept="photography" data-hi="Capturing!" data-reveal="" style={{ "--d": "50ms" }}>
                 <div className="person__avatar">
@@ -682,7 +643,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Shatakshi Yadav</h3>
                 <p className="person__role">Photography</p>
-                <span className="person__tag">Photography</span>
               </article>
               <article className="person person--blue tilt" data-dept="photography" data-hi="Frame It!" data-reveal="" style={{ "--d": "100ms" }}>
                 <div className="person__avatar">
@@ -699,7 +659,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Shivansh Dubey</h3>
                 <p className="person__role">Photography</p>
-                <span className="person__tag">Photography</span>
               </article>
               <article className="person person--green tilt" data-dept="photography" data-hi="Memories!" data-reveal="" style={{ "--d": "150ms" }}>
                 <div className="person__avatar">
@@ -713,7 +672,6 @@ export default function TeamPage() {
                 </div>
                 <h3>Atul Dwivedi</h3>
                 <p className="person__role">Photography</p>
-                <span className="person__tag">Photography</span>
               </article>
             </div>
             <div style={{ textAlign: "center", marginTop: "60px" }}>
