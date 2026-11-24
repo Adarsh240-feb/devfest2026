@@ -79,6 +79,20 @@ export default function HomePage() {
       <main id="main">
         {/* ================= HERO ================= */}
         <section className="hero" id="home">
+          <div className="hero__video-wrap" aria-hidden="true">
+            <video
+              className="hero__video"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              poster="/assets/img/hero-sangam.webp"
+            >
+              <source src="/assets/video/hero-bg.mp4" type="video/mp4" />
+            </video>
+            <div className="hero__video-overlay" />
+          </div>
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__stickers" aria-hidden="true">
             {/* Left side icons & logos */}
@@ -238,7 +252,17 @@ export default function HomePage() {
                   <span className="mono">19 · 12 · 26</span>
                 </div>
                 <div className="hero-poster__art">
-                  <img className="poster-photo" src="/assets/img/hero-sangam.webp" alt="Boats on the Sangam at Prayagraj under a blue sky" width="960" height="983" fetchPriority="high" />
+                  <video
+                    className="poster-video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    poster="/assets/img/hero-sangam.webp"
+                  >
+                    <source src="/assets/video/hero-bg.mp4" type="video/mp4" />
+                  </video>
                   <div className="hero-poster__logo">
                     <img src="/assets/brand/devfest-2026-no-date.png" alt="DevFest" width="1600" height="238" />
                   </div>
