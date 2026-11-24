@@ -1,7 +1,6 @@
 import { registerLinkProps } from '@/lib/registration';
 import SkipLink from '@/components/SkipLink';
 import BoatPreloader from '@/components/BoatPreloader';
-import HeroMandala from '@/components/HeroMandala';
 import RibbonMarquee from '@/components/RibbonMarquee';
 import CollegePartners from '@/components/CollegePartners';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -80,7 +79,6 @@ export default function HomePage() {
       <main id="main">
         {/* ================= HERO ================= */}
         <section className="hero" id="home">
-          <HeroMandala />
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__stickers" aria-hidden="true">
             {/* Left side icons & logos */}
