@@ -79,20 +79,6 @@ export default function HomePage() {
       <main id="main">
         {/* ================= HERO ================= */}
         <section className="hero" id="home">
-          <div className="hero__video-wrap" aria-hidden="true">
-            <video
-              className="hero__video"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              poster="/assets/img/hero-sangam.webp"
-            >
-              <source src="/assets/video/hero-bg.mp4" type="video/mp4" />
-            </video>
-            <div className="hero__video-overlay" />
-          </div>
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__stickers" aria-hidden="true">
             {/* Left side icons & logos */}
