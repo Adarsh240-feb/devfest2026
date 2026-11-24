@@ -1710,20 +1710,20 @@ body.is-loaded .word>span {
 }
 
 .hero-poster__logo {
-  position: absolute;
-  left: 50%;
-  top: 36%;
-  transform: translate(-50%, -50%);
-  width: 78%;
-  background: rgba(248, 234, 202, .92);
-  border: 1.5px solid var(--ink);
-  border-radius: 999px;
-  padding: 10px 14px;
+  position: static;
+  width: clamp(118px, 14vw, 146px);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .hero-poster__logo img {
   width: 100%;
-  height: auto
+  height: auto;
+  display: block;
 }
 
 .hero-poster__loc {
@@ -6030,7 +6030,8 @@ body.is-loaded .word>span {
 
 /* Brand Logos in Dark Mode */
 [data-theme="dark"] .brand img,
-[data-theme="dark"] .preloader__mark img{
+[data-theme="dark"] .preloader__mark img,
+[data-theme="dark"] .hero-poster__logo img {
   content: url('/assets/brand/devfest-2026-no-date-dark.png');
 }
 

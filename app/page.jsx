@@ -233,8 +233,9 @@ export default function HomePage() {
             <div className="hero__visual" data-reveal="" style={{ "--d": "300ms" }}>
               <div className="hero-poster" id="heroPoster">
                 <div className="hero-poster__top">
-                  <span className="mono">GDG · PRAYAGRAJ</span>
-                  {" "}
+                  <div className="hero-poster__logo">
+                    <img src="/assets/brand/devfest-2026-no-date.png" alt="DevFest" width="1600" height="238" />
+                  </div>
                   <span className="mono">19 · 12 · 26</span>
                 </div>
                 <div className="hero-poster__art">
@@ -249,9 +250,6 @@ export default function HomePage() {
                   >
                     <source src="/assets/video/hero-bg.mp4" type="video/mp4" />
                   </video>
-                  <div className="hero-poster__logo">
-                    <img src="/assets/brand/devfest-2026-no-date.png" alt="DevFest" width="1600" height="238" />
-                  </div>
                   <span className="hero-poster__year">2026</span>
                 </div>
                 <div className="hero-poster__bottom">
