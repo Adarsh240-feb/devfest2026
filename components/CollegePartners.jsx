@@ -108,7 +108,7 @@ export default function CollegePartners() {
               <div className="cm-tile__body">
                 <h4 className="cm-tile__name">{c.name}</h4>
                 {(isBig || isWide) && (
-                  <p className="cm-tile__sub mono">Partner Campus · DevFest Prayagraj '26</p>
+                  <p className="cm-tile__sub mono">Partner Campus · DevFest Prayagraj &apos;26</p>
                 )}
               </div>
 
