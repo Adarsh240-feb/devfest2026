@@ -252,8 +252,6 @@ export default function HomePage() {
                   <div className="hero-poster__logo">
                     <img src="/assets/brand/devfest-2026-no-date.png" alt="DevFest" width="1600" height="238" />
                   </div>
-                  <span className="hero-poster__loc">Prayagraj</span>
-                  {" "}
                   <span className="hero-poster__year">2026</span>
                 </div>
                 <div className="hero-poster__bottom">
@@ -266,7 +264,6 @@ export default function HomePage() {
                   </div>
                   <span className="hero-poster__badge">One current</span>
                 </div>
-                <div className="hero-poster__sticker">BUILD · BELONG · BEYOND</div>
                 <div className="hero-poster__sunsticker" aria-hidden="true">
                   <svg className="ic">
                     <use href="#i-diya" />
