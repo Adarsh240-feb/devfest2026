@@ -6,7 +6,7 @@ const LINKS = [
   { href: '/team', label: 'The Crew' },
   { href: '/badge', label: 'Badge Studio' },
   { href: '/#partners', label: 'Partners' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 export default function MobileMenu() {

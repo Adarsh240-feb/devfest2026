@@ -133,15 +133,6 @@ export default function HomePage() {
           </div>
           <div className="container hero__inner">
             <div className="hero__copy">
-              <div className="eyebrow" data-reveal="">
-                <span className="eyebrow__dot" />
-                {" "}
-                <span>GDG Prayagraj presents</span>
-                {" "}
-                <span className="eyebrow__line" />
-                {" "}
-                <span className="mono">DevFest Prayagraj ’26</span>
-              </div>
               <h1 className="hero__title">
                 <span className="line">
                   <span className="word" style={{ "--i": "0" }}>
@@ -233,23 +224,17 @@ export default function HomePage() {
             <div className="hero__visual" data-reveal="" style={{ "--d": "300ms" }}>
               <div className="hero-poster" id="heroPoster">
                 <div className="hero-poster__top">
-                  <div className="hero-poster__logo">
-                    <img src="/assets/brand/devfest-2026-no-date.png" alt="DevFest" width="1600" height="238" />
-                  </div>
+                  <span className="mono">GDG · PRAYAGRAJ</span>
+                  {" "}
                   <span className="mono">19 · 12 · 26</span>
                 </div>
                 <div className="hero-poster__art">
-                  <video
-                    className="poster-video"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    poster="/assets/img/hero-sangam.webp"
-                  >
-                    <source src="/assets/video/hero-bg.mp4" type="video/mp4" />
-                  </video>
+                  <img className="poster-photo" src="/assets/img/hero-sangam.webp" alt="Boats on the Sangam at Prayagraj under a blue sky" width="960" height="983" fetchPriority="high" />
+                  <div className="hero-poster__logo">
+                    <img src="/assets/brand/devfest-2026-no-date.png" alt="DevFest" width="1600" height="238" />
+                  </div>
+                  <span className="hero-poster__loc">Prayagraj</span>
+                  {" "}
                   <span className="hero-poster__year">2026</span>
                 </div>
                 <div className="hero-poster__bottom">
@@ -260,12 +245,6 @@ export default function HomePage() {
                     {" "}
                     <span>NCZCC · Civil Lines</span>
                   </div>
-                  <span className="hero-poster__badge">One current</span>
-                </div>
-                <div className="hero-poster__sunsticker" aria-hidden="true">
-                  <svg className="ic">
-                    <use href="#i-diya" />
-                  </svg>
                 </div>
               </div>
               <div className="hero__scribble" aria-hidden="true">
@@ -322,6 +301,60 @@ export default function HomePage() {
             </div>
           </div>
           <div className="countdown-band__halftone" aria-hidden="true" />
+        </section>
+        {/* ================= TEASER FILM ================= */}
+        <section className="section teaser" id="teaser" aria-labelledby="teaserTitle">
+          <div className="container">
+            <div className="teaser__head" data-reveal="">
+              <div>
+                <h2 className="section-title" id="teaserTitle">
+                  Catch the{" "}
+                  <em>current.</em>
+                </h2>
+              </div>
+              <p className="teaser__lede">
+                A journey through the energy, ideas, and community moments that bring DevFest Prayagraj together.
+              </p>
+            </div>
+            <div className="teaser__card" data-reveal="" style={{ "--d": "100ms" }}>
+              <div className="teaser__frame">
+                <video
+                  id="teaserVideo"
+                  className="teaser__video"
+                  autoPlay
+                  loop
+                  playsInline
+                  disablePictureInPicture
+                  controlsList="nodownload"
+                  preload="metadata"
+                  width="1280"
+                  height="720"
+                  poster="/assets/img/hero-sangam.webp"
+                >
+                  <source src="/assets/video/VID-20261124-WA0020.mp4" type="video/mp4" />
+                </video>
+                <button
+                  type="button"
+                  id="teaserSoundBtn"
+                  className="teaser__sound"
+                  aria-label="Toggle sound"
+                  aria-pressed="false"
+                  title="Toggle sound"
+                >
+                  <svg className="teaser__sound-icon teaser__sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                  </svg>
+                  <svg className="teaser__sound-icon teaser__sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <line x1="23" y1="9" x2="17" y2="15" />
+                    <line x1="17" y1="9" x2="23" y2="15" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </section>
         {/* ================= ABOUT ================= */}
         <section className="section about" id="about">
@@ -856,194 +889,6 @@ export default function HomePage() {
                   Schematic map, not to scale ·{" "}
                   <a href="https://www.google.com/maps/dir//North+Central+Zone+Cultural+Centre,+14,+CSP+Singh+Marg,+Civil+Lines,+Prayagraj,+Uttar+Pradesh+211001" target="_blank" rel="noopener">Open in Google Maps</a>
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* ================= FAQ ================= */}
-        <section className="section faq" id="faq">
-          <div className="container">
-            <div className="faq__grid">
-              <div className="faq__head">
-                <div className="section-label" data-reveal="">
-                  <span>05</span>
-                  {" "}Questions
-                </div>
-                <h2 className="section-title" data-reveal="" style={{ "--d": "80ms" }}>
-                  Frequently asked
-                  <br />
-                  <em>questions.</em>
-                </h2>
-                <p data-reveal="" style={{ "--d": "140ms" }}>Quick answers before you pack your laptop. Still stuck? Message us on Instagram.</p>
-                <div className="faq__sticker" aria-hidden="true">
-                  <svg className="ic">
-                    <use href="#i-diya" />
-                  </svg>
-                  {" "}
-                  <span>
-                    ask
-                    <br />
-                    away
-                  </span>
-                </div>
-              </div>
-              <div className="accordion" id="faqAccordion" data-reveal="" style={{ "--d": "100ms" }}>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="true" aria-controls="faq1" id="faqBtn1">
-                    <span>What is DevFest?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq1" role="region" aria-labelledby="faqBtn1" style={{ gridTemplateRows: "1fr" }}>
-                    <div className="acc-panel__inner">
-                      <p>
-                        DevFest is a tech conference that Google Developer Groups run in cities around the world. In Prayagraj, it is a full day of talks, hands-on workshops and meeting other builders, all around Google tools like Gemini, Android, Firebase, Google Cloud and the web.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq2" id="faqBtn2">
-                    <span>What is Google Developer Groups (GDG)?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq2" role="region" aria-labelledby="faqBtn2">
-                    <div className="acc-panel__inner">
-                      <p>
-                        Google Developer Groups (GDGs) are free, local communities for anyone who builds with Google technology. GDG Prayagraj runs meetups, study jams and workshops all year. DevFest is our biggest day of the year.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq3" id="faqBtn3">
-                    <span>When and where is the event taking place?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq3" role="region" aria-labelledby="faqBtn3">
-                    <div className="acc-panel__inner">
-                      <p>
-                        <strong>Date:</strong>
-                        {" "}Saturday, 19th December 2026
-                        <br />
-                        <strong>Venue:</strong>
-                        {" "}North Central Zone Cultural Centre (NCZCC) Auditorium, Civil Lines, Prayagraj
-                        <br />
-                        <strong>Time:</strong>
-                        {" "}9:00 AM to 6:00 PM
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq4" id="faqBtn4">
-                    <span>Will the accommodation facility be provided to attendees?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq4" role="region" aria-labelledby="faqBtn4">
-                    <div className="acc-panel__inner">
-                      <p>
-                        We can’t arrange a stay for attendees, so please book your own if you’re coming from outside Prayagraj. December is a busy month in the city, so book early.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq5" id="faqBtn5">
-                    <span>Will I get perks for attending?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq5" role="region" aria-labelledby="faqBtn5">
-                    <div className="acc-panel__inner">
-                      <p>
-                        Yes. Every attendee gets official DevFest swag and a badge, lunch and refreshments, and a participation certificate.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq6" id="faqBtn6">
-                    <span>Will there be networking opportunities?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq6" role="region" aria-labelledby="faqBtn6">
-                    <div className="acc-panel__inner">
-                      <p>
-                        Yes, and we plan for it. The lunch break, the closing high tea and the hallway between sessions are made for meeting speakers, partners and other developers. Bring your questions.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq7" id="faqBtn7">
-                    <span>Is there any age limit to register?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq7" role="region" aria-labelledby="faqBtn7">
-                    <div className="acc-panel__inner">
-                      <p>
-                        No age limit. If you’re curious about tech, you’re welcome, whether you’re in school, in college or ten years into your career.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq8" id="faqBtn8">
-                    <span>Do I need to bring a laptop?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq8" role="region" aria-labelledby="faqBtn8">
-                    <div className="acc-panel__inner">
-                      <p>For the talks, no. For the hands-on workshops, yes. Bring a charged laptop and a charger.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="acc-item">
-                  <button className="acc-trigger" aria-expanded="false" aria-controls="faq9" id="faqBtn9">
-                    <span>Can I volunteer or speak at DevFest?</span>
-                    <span className="acc-icon">
-                      <svg className="ic">
-                        <use href="#i-plus" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className="acc-panel" id="faq9" role="region" aria-labelledby="faqBtn9">
-                    <div className="acc-panel__inner">
-                      <p>Yes. Follow GDG Prayagraj on Instagram or LinkedIn. We post calls for volunteers and speakers there first.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
