@@ -5,7 +5,7 @@ const LINKS = [
   { href: '/agenda', label: 'Agenda & Speakers' },
   { href: '/team', label: 'The Crew' },
   { href: '/badge', label: 'Badge Studio' },
-  { href: '/#partners', label: 'Partners' },
+  { href: '/venue', label: 'Venue' },
   { href: '/faq', label: 'FAQ' },
 ];
 

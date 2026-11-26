@@ -40,7 +40,7 @@ export default function SiteFooter({ home = false }) {
             </div>
             <div className="footer__col">
               <span className="mono">Practical</span>
-              <a href={section('venue')}>Venue</a>
+              <a href="/venue">Venue</a>
               <a href="/faq">FAQ</a>
               <a href="/agenda">Agenda</a>
               <a href={section('register')}>Registration</a>

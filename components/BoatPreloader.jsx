@@ -1,12 +1,10 @@
 import Ship from '@/components/Ship';
-import IntroCollage from '@/components/IntroCollage';
 
 /**
  * Home-page intro: the GDG Prayagraj ship enters from beyond the left edge and
  * weaves an S-curve across the screen in 4 seconds. Behind it three river
  * trails (Ganga, Yamuna, Saraswati) merge into one glowing stream. Once the
- * ship has left past the right edge, a photo collage of the city fades in and
- * scrambles out, and the page fades in.
+ * ship has left past the right edge, the page fades in.
  *
  * - Plays every time the home page is opened.
  * - Click, tap, Esc or the "Skip intro" button ends it early.
@@ -15,17 +13,10 @@ import IntroCollage from '@/components/IntroCollage';
 
 // Runs before paint: lock page scrolling on reload / direct visit, but skip when clicking to Home or sections like #partners
 const introGate = `try{
-  var isReload = false;
-  var nav = window.performance && performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
-  if (nav && nav.type === 'reload') { isReload = true; }
-  else if (window.performance && performance.navigation && performance.navigation.type === 1) { isReload = true; }
-  
-  if (window.location.hash && window.location.hash !== '#home') {
-    document.documentElement.classList.add('no-intro');
-  } else if (isReload) {
-    sessionStorage.removeItem('skipIntroForHomeNav');
-    document.body.classList.add('is-preloading');
-  } else if (sessionStorage.getItem('skipIntroForHomeNav') === 'true') {
+  var FIFTEEN_DAYS=15*24*60*60*1000;
+  var seenAt=Number(localStorage.getItem('devfest-intro-seen-at')||0);
+  var recentlySeen=seenAt>0&&(Date.now()-seenAt)<FIFTEEN_DAYS;
+  if (recentlySeen || (window.location.hash && window.location.hash !== '#home') || sessionStorage.getItem('skipIntroForHomeNav') === 'true') {
     document.documentElement.classList.add('no-intro');
   } else {
     document.body.classList.add('is-preloading');
@@ -112,8 +103,6 @@ export default function BoatPreloader() {
             <Ship id="shipMain" />
           </svg>
         </div>
-
-        <IntroCollage />
 
         <button className="preloader__skip" id="preloaderSkip" type="button">
           Skip intro <span aria-hidden="true">›</span>

@@ -1546,12 +1546,6 @@ body.is-loaded .word>span {
   padding-right: .06em
 }
 
-.hero__title .word--serif span {
-  background-image: linear-gradient(transparent 66%, var(--yellow-pop) 66%, var(--yellow-pop) 94%, transparent 94%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
 .hero__lede {
   max-width: 34ch;
   font-size: clamp(16px, 1.35vw, 19px);

@@ -5,12 +5,12 @@ const NAV = [
   { key: 'agenda', href: '/agenda', label: 'Agenda' },
   { key: 'team', href: '/team', label: 'The Crew' },
   { key: 'badge', href: '/badge', label: 'Badge Studio' },
-  { key: 'partners', href: '/#partners', label: 'Partners' },
+  { key: 'venue', href: '/venue', label: 'Venue' },
   { key: 'faq', href: '/faq', label: 'FAQ' },
 ];
 
 /**
- * @param {{ current?: 'home' | 'agenda' | 'team' | 'badge' | 'faq' }} props
+ * @param {{ current?: 'home' | 'agenda' | 'team' | 'badge' | 'venue' | 'faq' }} props
  *   `current` highlights the active nav link. On the home page, the brand and
  *   Register button jump to in-page anchors instead of reloading.
  */
