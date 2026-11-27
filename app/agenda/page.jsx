@@ -62,10 +62,6 @@ export default function AgendaPage() {
           <div className="container">
             <div className="section-head section-head--split">
               <div>
-                <div className="section-label" data-reveal="">
-                  <span>03</span>
-                  {" "}Programme
-                </div>
                 <h2 className="section-title" data-reveal="" style={{ "--d": "80ms" }}>
                   One day.
                   <br />
@@ -78,12 +74,6 @@ export default function AgendaPage() {
                   A single day, shaped around you: big-room ideas in the morning, hands-on labs in the afternoon, and the hallway track all day long.
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "14px", flexWrap: "wrap", marginTop: "12px" }}>
-                  <p className="small-note" style={{ margin: "0" }}>
-                    <svg className="ic">
-                      <use href="#i-calendar" />
-                    </svg>
-                    {" "}Indicative running order. Final agenda drops 30 Nov 2026.
-                  </p>
                   <button className="btn btn--light btn--small js-calendar" type="button" aria-haspopup="dialog" style={{ padding: "6px 14px", fontSize: "13px" }}>
                     <svg className="ic">
                       <use href="#i-calendar" />
