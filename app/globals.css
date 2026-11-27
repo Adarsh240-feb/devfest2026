@@ -6802,7 +6802,7 @@ body.is-loaded .word>span {
 
 [data-theme="dark"] .college-filter-btn.is-active {
   background: var(--paper-2);
-  color: var(--paper);
+  color: var(--ink);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
